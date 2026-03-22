@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MonOptimisationPro — Optimisation Fiscale & Patrimoniale</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --navy-light: #1a3355;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-pale: #f5e6b8;
+    --cream: #faf7f0;
+    --white: #ffffff;
+    --text-muted: #8a9bb5;
+    --text-light: #ccd6f6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--white); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: var(--text-light); text-decoration: none;
+    font-size: 0.9rem; font-weight: 400; letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 65%),
+                radial-gradient(ellipse at 20% 80%, rgba(17,34,64,0.9) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: linear-gradient(var(--gold) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 680px;
+    animation: fadeUp 0.9s ease both;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 6px 16px; border-radius: 100px;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+    color: var(--gold); text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .hero-badge::before { content: '●'; font-size: 0.5rem; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+    position: relative;
+  }
+  .hero-sub {
+    font-size: 1.15rem; font-weight: 300;
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 44px;
+  }
+  .hero-sub strong { color: var(--white); font-weight: 500; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 16px 36px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.3);
+  }
+  .btn-secondary {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: color 0.2s;
+    border-bottom: 1px solid rgba(138,155,181,0.4);
+    padding-bottom: 2px;
+  }
+  .btn-secondary:hover { color: var(--gold); border-color: var(--gold); }
+
+  .hero-stat {
+    position: absolute; right: 60px; top: 50%; transform: translateY(-50%);
+    text-align: center; z-index: 2;
+    animation: fadeUp 1.1s ease 0.2s both;
+  }
+  .hero-stat-card {
+    background: rgba(17,34,64,0.8);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 16px;
+    padding: 32px 40px;
+    backdrop-filter: blur(10px);
+  }
+  .hero-stat-card .big {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem; font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .hero-stat-card .label {
+    font-size: 0.85rem; color: var(--text-muted);
+    margin-top: 8px; line-height: 1.5;
+  }
+  .hero-stat-divider { height: 1px; background: rgba(201,168,76,0.15); margin: 20px 0; }
+
+  /* PROBLÈME */
+  .section { padding: 100px 60px; }
+  .section-label {
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600; margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700; line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    font-size: 1.05rem; color: var(--text-light); line-height: 1.7;
+    max-width: 580px; font-weight: 300;
+  }
+
+  .problem-section {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .problem-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px; margin-top: 60px;
+  }
+  .problem-card {
+    background: var(--navy);
+    padding: 40px 36px;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .problem-card:hover { transform: translateY(-4px); }
+  .problem-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold); transform: scaleX(0); transition: transform 0.3s;
+  }
+  .problem-card:hover::after { transform: scaleX(1); }
+  .problem-icon { font-size: 2.2rem; margin-bottom: 20px; }
+  .problem-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700; margin-bottom: 14px;
+  }
+  .problem-card p { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; }
+  .problem-card .highlight {
+    display: inline-block; margin-top: 20px;
+    color: var(--gold); font-size: 0.85rem; font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  /* LEVIERS */
+  .levers-section { background: var(--navy); }
+  .levers-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 60px; }
+  .lever-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 12px;
+    padding: 40px 32px;
+    transition: all 0.3s; cursor: pointer;
+  }
+  .lever-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    transform: translateY(-6px);
+  }
+  .lever-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; font-weight: 900;
+    color: rgba(201,168,76,0.15); line-height: 1;
+    margin-bottom: 16px;
+  }
+  .lever-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;
+    color: var(--white);
+  }
+  .lever-card p { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin-bottom: 24px; }
+  .lever-link {
+    color: var(--gold); font-size: 0.9rem; font-weight: 600;
+    text-decoration: none; letter-spacing: 0.04em;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .lever-link:hover { gap: 14px; }
+
+  /* SIMULATEURS */
+  .sim-section {
+    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+  .sim-header { text-align: center; margin-bottom: 60px; }
+  .sim-header .section-sub { margin: 0 auto; text-align: center; }
+  .sim-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; margin: 0 auto; }
+  .sim-card {
+    background: var(--navy);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 16px; padding: 48px 40px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  .sim-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 60px rgba(201,168,76,0.1);
+    transform: translateY(-4px);
+  }
+  .sim-icon { font-size: 3rem; margin-bottom: 20px; }
+  .sim-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; margin-bottom: 12px;
+  }
+  .sim-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 32px; }
+  .btn-sim {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 700; font-size: 0.95rem;
+    text-decoration: none; letter-spacing: 0.03em;
+    display: inline-block;
+    transition: all 0.25s;
+  }
+  .btn-sim:hover {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  /* SIMULATEUR PER INLINE */
+  .simulator-wrapper {
+    background: var(--navy-light);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 16px; padding: 48px;
+    margin-top: 40px; display: none;
+  }
+  .simulator-wrapper.active { display: block; animation: fadeUp 0.4s ease; }
+  .sim-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; margin-bottom: 32px;
+    color: var(--gold);
+  }
+  .sim-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 36px; }
+  .sim-field label {
+    display: block; font-size: 0.82rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-muted);
+    font-weight: 600; margin-bottom: 10px;
+  }
+  .sim-field .value-display {
+    font-size: 1.3rem; font-weight: 700; color: var(--gold);
+    margin-bottom: 8px;
+  }
+  input[type="range"] {
+    width: 100%; -webkit-appearance: none; height: 4px;
+    background: rgba(201,168,76,0.2); border-radius: 2px; outline: none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 18px; height: 18px;
+    border-radius: 50%; background: var(--gold); cursor: pointer;
+  }
+  select {
+    width: 100%; background: var(--navy-mid); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--white); padding: 12px 16px; border-radius: 6px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none;
+  }
+  .sim-results {
+    background: var(--navy-mid); border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 12px; padding: 32px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+    margin-bottom: 36px;
+  }
+  .result-item { text-align: center; }
+  .result-item .r-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900; color: var(--gold); line-height: 1;
+  }
+  .result-item .r-label {
+    font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; line-height: 1.4;
+  }
+  .sim-alert {
+    background: rgba(201,168,76,0.08); border-left: 3px solid var(--gold);
+    padding: 16px 20px; border-radius: 0 8px 8px 0;
+    color: var(--gold-pale); font-size: 0.9rem; line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .sim-capture { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px; align-items: end; }
+  .sim-capture input[type="text"],
+  .sim-capture input[type="email"],
+  .sim-capture input[type="tel"] {
+    background: var(--navy-mid); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--white); padding: 14px 16px; border-radius: 6px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none;
+    width: 100%;
+  }
+  .sim-capture input::placeholder { color: var(--text-muted); }
+  .sim-capture input:focus { border-color: var(--gold); }
+  .btn-capture {
+    background: var(--gold); color: var(--navy);
+    padding: 14px 28px; border-radius: 6px;
+    font-weight: 700; font-size: 0.95rem; border: none; cursor: pointer;
+    white-space: nowrap; transition: all 0.2s;
+  }
+  .btn-capture:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  /* TEMOIGNAGES */
+  .testimonials-section { background: var(--navy-mid); }
+  .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 60px; }
+  .testimonial-card {
+    background: var(--navy);
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 12px; padding: 36px 32px;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem; line-height: 1;
+    color: rgba(201,168,76,0.12);
+    position: absolute; top: 16px; left: 28px;
+  }
+  .testimonial-card p {
+    color: var(--text-light); line-height: 1.8; font-size: 1rem;
+    font-style: italic; margin-bottom: 24px; position: relative;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 14px; }
+  .author-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--navy-light));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem; color: var(--navy);
+  }
+  .author-name { font-weight: 600; font-size: 0.95rem; }
+  .author-desc { font-size: 0.82rem; color: var(--text-muted); }
+  .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 4px; }
+
+  /* CTA FINAL */
+  .cta-section {
+    background: var(--navy);
+    text-align: center; padding: 120px 60px;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-section .section-title { max-width: 700px; margin: 0 auto 20px; }
+  .cta-section .section-sub { max-width: 560px; margin: 0 auto 48px; text-align: center; }
+  .cta-form {
+    display: flex; gap: 12px; max-width: 620px; margin: 0 auto 16px;
+    flex-wrap: wrap; justify-content: center;
+  }
+  .cta-form input {
+    flex: 1; min-width: 180px;
+    background: var(--navy-mid); border: 1px solid rgba(201,168,76,0.3);
+    color: var(--white); padding: 16px 20px; border-radius: 6px;
+    font-family: 'DM Sans', sans-serif; font-size: 1rem; outline: none;
+  }
+  .cta-form input:focus { border-color: var(--gold); }
+  .cta-form input::placeholder { color: var(--text-muted); }
+  .cta-form .btn-primary { white-space: nowrap; border: none; cursor: pointer; }
+  .cta-trust {
+    font-size: 0.82rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 6px; justify-content: center;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 40px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--gold);
+  }
+  footer p { color: var(--text-muted); font-size: 0.82rem; }
+  footer a { color: var(--text-muted); text-decoration: none; font-size: 0.82rem; }
+  footer a:hover { color: var(--gold); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive minimal */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-stat { display: none; }
+    .section { padding: 60px 24px; }
+    .problem-grid, .levers-grid { grid-template-columns: 1fr; gap: 2px; }
+    .sim-cards { grid-template-columns: 1fr; }
+    .sim-fields { grid-template-columns: 1fr; }
+    .sim-results { grid-template-columns: 1fr; }
+    .sim-capture { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+    .cta-form { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">MonOptimisation<span>Pro</span></div>
+  <ul class="nav-links">
+    <li><a href="#leviers">Nos Solutions</a></li>
+    <li><a href="#simulateurs">Simulateurs</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+  </ul>
+  <a href="#diagnostic" class="nav-cta">Diagnostic gratuit →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Expert Assurance &amp; Patrimoine</div>
+    <h1>Payez moins d'impôts.<br>Préparez votre <em>retraite</em>.<br>Protégez l'essentiel.</h1>
+    <p class="hero-sub">
+      En <strong>15 minutes</strong>, découvrez ce que vous pouvez vraiment optimiser —
+      et ce que vous perdez chaque année à ne rien faire.
+    </p>
+    <div class="hero-btns">
+      <a href="#diagnostic" class="btn-primary">
+        → Faire mon diagnostic gratuit
+      </a>
+      <a href="#simulateurs" class="btn-secondary">Voir les simulateurs ↓</a>
+    </div>
+  </div>
+  <div class="hero-stat">
+    <div class="hero-stat-card">
+      <div class="big">4 610€</div>
+      <div class="label">économisés en moyenne<br>par an sur les impôts</div>
+      <div class="hero-stat-divider"></div>
+      <div class="big" style="font-size:2.4rem">+38%</div>
+      <div class="label">de rendement supplémentaire<br>vs livret A sur 15 ans</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLÈME -->
+<section class="problem-section section">
+  <div class="section-label">Le constat</div>
+  <div class="section-title">Et si vous étiez en train de<br>laisser de l'argent sur la table ?</div>
+  <p class="section-sub">La plupart des actifs surpaient leurs impôts, sous-optimisent leur épargne et sont mal protégés. Ces situations ne sont pas une fatalité.</p>
+
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="problem-icon">💸</div>
+      <h3>Impôts</h3>
+      <p>La majorité des salariés et indépendants surpaient leurs impôts sans le savoir. Des solutions légales existent — et elles sont accessibles dès aujourd'hui.</p>
+      <span class="highlight">Jusqu'à 4 610€/an récupérables →</span>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">🏦</div>
+      <h3>Épargne</h3>
+      <p>Votre livret A rapporte 3%. L'inflation ronge le reste. Votre capital dort alors qu'il pourrait travailler pour vous — avec la fiscalité en votre faveur.</p>
+      <span class="highlight">L'assurance-vie change tout →</span>
+    </div>
+    <div class="problem-card">
+      <div class="problem-icon">🛡️</div>
+      <h3>Protection</h3>
+      <p>Un arrêt maladie prolongé peut diviser vos revenus par deux. La Sécu couvre bien moins qu'on ne le croit. Êtes-vous vraiment protégé ?</p>
+      <span class="highlight">Vérifier ma couverture →</span>
+    </div>
+  </div>
+</section>
+
+<!-- LEVIERS -->
+<section class="levers-section section" id="leviers">
+  <div class="section-label">Nos solutions</div>
+  <div class="section-title">3 leviers pour reprendre<br>le contrôle de vos finances</div>
+
+  <div class="levers-grid">
+    <div class="lever-card" onclick="location.href='#simulateurs'">
+      <div class="lever-num">01</div>
+      <h3>Réduire vos impôts</h3>
+      <p>Le PER vous permet de déduire vos versements de votre revenu imposable. Un cadre à 50 000€/an peut économiser jusqu'à 3 000€ d'impôts — légalement, chaque année.</p>
+      <a href="#simulateurs" class="lever-link">Calculer mon économie →</a>
+    </div>
+    <div class="lever-card" onclick="location.href='#simulateurs'">
+      <div class="lever-num">02</div>
+      <h3>Faire travailler votre épargne</h3>
+      <p>L'assurance-vie reste le placement préféré des Français : fiscalité avantageuse après 8 ans, capital disponible, transmission optimisée jusqu'à 152 500€ par bénéficiaire.</p>
+      <a href="#simulateurs" class="lever-link">Simuler mes gains →</a>
+    </div>
+    <div class="lever-card" onclick="location.href='#diagnostic'">
+      <div class="lever-num">03</div>
+      <h3>Protéger vos revenus</h3>
+      <p>Que se passe-t-il si vous êtes en arrêt 6 mois ? La Sécu couvre peu. Une bonne prévoyance se construit — pas s'improvise. Vérifiez votre niveau de protection.</p>
+      <a href="#diagnostic" class="lever-link">Vérifier ma protection →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATEURS -->
+<section class="sim-section section" id="simulateurs">
+  <div class="sim-header">
+    <div class="section-label">Outils de simulation</div>
+    <div class="section-title">Calculez votre potentiel<br>en 2 minutes</div>
+    <p class="section-sub">Des estimations personnalisées pour visualiser concrètement ce que vous pouvez gagner.</p>
+  </div>
+
+  <div class="sim-cards">
+    <div class="sim-card">
+      <div class="sim-icon">📊</div>
+      <h3>Simulateur PER</h3>
+      <p>Combien pouvez-vous économiser sur vos impôts cette année grâce au Plan d'Épargne Retraite ?</p>
+      <a href="#" class="btn-sim" onclick="toggleSim('per'); return false;">Lancer le simulateur →</a>
+    </div>
+    <div class="sim-card">
+      <div class="sim-icon">📈</div>
+      <h3>Simulateur Assurance Vie</h3>
+      <p>Combien votre épargne peut-elle vraiment rapporter sur 10, 20 ou 30 ans ?</p>
+      <a href="#" class="btn-sim" onclick="toggleSim('av'); return false;">Lancer le simulateur →</a>
+    </div>
+  </div>
+
+  <!-- SIM PER -->
+  <div class="simulator-wrapper" id="sim-per">
+    <div class="sim-title">🧮 Simulateur PER — Économie d'impôt</div>
+    <div class="sim-fields">
+      <div class="sim-field">
+        <label>Revenu annuel brut</label>
+        <div class="value-display" id="rev-display">45 000 €</div>
+        <input type="range" min="15000" max="150000" step="1000" value="45000" oninput="updatePER()" id="per-rev">
+      </div>
+      <div class="sim-field">
+        <label>Tranche marginale d'imposition</label>
+        <select onchange="updatePER()" id="per-tmi">
+          <option value="0.11">11%</option>
+          <option value="0.30" selected>30%</option>
+          <option value="0.41">41%</option>
+          <option value="0.45">45%</option>
+        </select>
+      </div>
+      <div class="sim-field">
+        <label>Versement mensuel envisagé</label>
+        <div class="value-display" id="vers-display">200 €/mois</div>
+        <input type="range" min="50" max="1500" step="50" value="200" oninput="updatePER()" id="per-vers">
+      </div>
+      <div class="sim-field">
+        <label>Durée jusqu'à la retraite</label>
+        <div class="value-display" id="dur-display">20 ans</div>
+        <input type="range" min="5" max="35" step="1" value="20" oninput="updatePER()" id="per-dur">
+      </div>
+    </div>
+    <div class="sim-results">
+      <div class="result-item">
+        <div class="r-value" id="eco-annee">720 €</div>
+        <div class="r-label">Économie d'impôt<br>par an</div>
+      </div>
+      <div class="result-item">
+        <div class="r-value" id="eco-total">14 400 €</div>
+        <div class="r-label">Économie totale<br>sur la durée</div>
+      </div>
+      <div class="result-item">
+        <div class="r-value" id="capital-retraite">73 200 €</div>
+        <div class="r-label">Capital estimé<br>à la retraite</div>
+      </div>
+    </div>
+    <div class="sim-alert" id="per-alert">
+      ⚠️ En ne faisant rien, vous laissez <strong id="alert-montant">720€</strong> d'économies fiscales par an à l'État.
+    </div>
+    <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:20px;">Ces chiffres sont des estimations. Pour un calcul précis basé sur votre situation réelle :</p>
+    <div class="sim-capture">
+      <input type="text" placeholder="Prénom" id="cap-prenom1">
+      <input type="email" placeholder="Email" id="cap-email1">
+      <input type="tel" placeholder="Téléphone" id="cap-tel1">
+      <button class="btn-capture" onclick="submitLead('per')">Obtenir mon bilan →</button>
+    </div>
+  </div>
+
+  <!-- SIM AV -->
+  <div class="simulator-wrapper" id="sim-av">
+    <div class="sim-title">📈 Simulateur Assurance Vie</div>
+    <div class="sim-fields">
+      <div class="sim-field">
+        <label>Capital initial</label>
+        <div class="value-display" id="av-cap-display">5 000 €</div>
+        <input type="range" min="0" max="50000" step="500" value="5000" oninput="updateAV()" id="av-cap">
+      </div>
+      <div class="sim-field">
+        <label>Versement mensuel</label>
+        <div class="value-display" id="av-vers-display">200 €/mois</div>
+        <input type="range" min="0" max="1000" step="50" value="200" oninput="updateAV()" id="av-vers">
+      </div>
+      <div class="sim-field">
+        <label>Durée</label>
+        <div class="value-display" id="av-dur-display">15 ans</div>
+        <input type="range" min="5" max="30" step="1" value="15" oninput="updateAV()" id="av-dur">
+      </div>
+      <div class="sim-field">
+        <label>Profil de risque</label>
+        <select onchange="updateAV()" id="av-profil">
+          <option value="0.02">Prudent — 2%/an</option>
+          <option value="0.035" selected>Équilibré — 3.5%/an</option>
+          <option value="0.05">Dynamique — 5%/an</option>
+        </select>
+      </div>
+    </div>
+    <div class="sim-results">
+      <div class="result-item">
+        <div class="r-value" id="av-capital">58 800 €</div>
+        <div class="r-label">Capital final estimé</div>
+      </div>
+      <div class="result-item">
+        <div class="r-value" id="av-verse">41 000 €</div>
+        <div class="r-label">Total versé<br>(votre effort)</div>
+      </div>
+      <div class="result-item">
+        <div class="r-value" id="av-gain">17 800 €</div>
+        <div class="r-label">Gains générés<br>par les intérêts</div>
+      </div>
+    </div>
+    <div class="sim-alert">
+      💡 Votre argent travaille pour vous. Ces gains s'accumulent chaque année — plus tôt vous commencez, plus l'effet est puissant.
+    </div>
+    <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:20px;">Recevez une analyse personnalisée et les meilleurs contrats pour votre profil :</p>
+    <div class="sim-capture">
+      <input type="text" placeholder="Prénom" id="cap-prenom2">
+      <input type="email" placeholder="Email" id="cap-email2">
+      <input type="tel" placeholder="Téléphone" id="cap-tel2">
+      <button class="btn-capture" onclick="submitLead('av')">Recevoir mon analyse →</button>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="testimonials-section section" id="temoignages">
+  <div class="section-label">Ils ont optimisé</div>
+  <div class="section-title">Ils ont pris le contrôle.<br>Vous pouvez aussi.</div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p>Je ne savais pas que je pouvais déduire autant. En un seul rendez-vous, j'ai mis en place un PER qui me fait économiser 2 400€ par an. J'aurais dû le faire bien plus tôt.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">T</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="author-name">Thomas M.</div>
+          <div class="author-desc">41 ans — Cadre commercial</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p>Mon assurance-vie dormait sur un fonds euros à 1,5%. Aujourd'hui elle est restructurée et performe à 4,8%. Même capital, meilleur placement. Le conseil était clair et sans jargon.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="author-name">Sophie R.</div>
+          <div class="author-desc">38 ans — Infirmière libérale</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section section" id="diagnostic">
+  <div class="section-label">Passez à l'action</div>
+  <div class="section-title">Vous méritez un diagnostic personnalisé.</div>
+  <p class="section-sub">
+    Pas un chatbot. Pas un algorithme. Un vrai échange avec un expert qui connaît votre situation.
+    <strong style="color:var(--white)">C'est gratuit, sans engagement, et ça prend 20 minutes.</strong>
+  </p>
+  <form class="cta-form" onsubmit="submitDiag(event)">
+    <input type="text" placeholder="Votre prénom" id="diag-prenom" required>
+    <input type="email" placeholder="Votre email" id="diag-email" required>
+    <input type="tel" placeholder="Votre téléphone" id="diag-tel" required>
+    <button type="submit" class="btn-primary">→ Je veux mon diagnostic gratuit</button>
+  </form>
+  <p class="cta-trust">🔒 Vos données sont confidentielles et ne sont jamais revendues</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MonOptimisationPro</div>
+  <p>© 2025 MonOptimisationPro.fr — Tous droits réservés</p>
+  <a href="#">Mentions légales</a>
+</footer>
+
+<script>
+  function fmt(n) {
+    return Math.round(n).toLocaleString('fr-FR') + ' €';
+  }
+
+  function updatePER() {
+    const rev = +document.getElementById('per-rev').value;
+    const tmi = +document.getElementById('per-tmi').value;
+    const vers = +document.getElementById('per-vers').value;
+    const dur = +document.getElementById('per-dur').value;
+
+    document.getElementById('rev-display').textContent = rev.toLocaleString('fr-FR') + ' €';
+    document.getElementById('vers-display').textContent = vers + ' €/mois';
+    document.getElementById('dur-display').textContent = dur + ' ans';
+
+    const versAn = vers * 12;
+    const ecoAn = versAn * tmi;
+    const ecoTotal = ecoAn * dur;
+    const capital = versAn * (Math.pow(1.035, dur) - 1) / 0.035;
+
+    document.getElementById('eco-annee').textContent = fmt(ecoAn);
+    document.getElementById('eco-total').textContent = fmt(ecoTotal);
+    document.getElementById('capital-retraite').textContent = fmt(capital);
+    document.getElementById('alert-montant').textContent = fmt(ecoAn);
+  }
+
+  function updateAV() {
+    const cap = +document.getElementById('av-cap').value;
+    const vers = +document.getElementById('av-vers').value;
+    const dur = +document.getElementById('av-dur').value;
+    const taux = +document.getElementById('av-profil').value;
+
+    document.getElementById('av-cap-display').textContent = cap.toLocaleString('fr-FR') + ' €';
+    document.getElementById('av-vers-display').textContent = vers + ' €/mois';
+    document.getElementById('av-dur-display').textContent = dur + ' ans';
+
+    const versAn = vers * 12;
+    const capitalFinal = cap * Math.pow(1 + taux, dur) + versAn * (Math.pow(1 + taux, dur) - 1) / taux;
+    const totalVerse = cap + versAn * dur;
+    const gain = capitalFinal - totalVerse;
+
+    document.getElementById('av-capital').textContent = fmt(capitalFinal);
+    document.getElementById('av-verse').textContent = fmt(totalVerse);
+    document.getElementById('av-gain').textContent = fmt(gain);
+  }
+
+  function toggleSim(type) {
+    const perEl = document.getElementById('sim-per');
+    const avEl = document.getElementById('sim-av');
+    if (type === 'per') {
+      perEl.classList.toggle('active');
+      avEl.classList.remove('active');
+      if (perEl.classList.contains('active')) perEl.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      avEl.classList.toggle('active');
+      perEl.classList.remove('active');
+      if (avEl.classList.contains('active')) avEl.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+
+  function submitLead(type) {
+    const prenom = document.getElementById(type==='per'?'cap-prenom1':'cap-prenom2').value;
+    const email = document.getElementById(type==='per'?'cap-email1':'cap-email2').value;
+    const tel = document.getElementById(type==='per'?'cap-tel1':'cap-tel2').value;
+    if (!prenom || !email) { alert('Merci de renseigner au moins votre prénom et email.'); return; }
+    alert(`✅ Merci ${prenom} ! Je vous contacte sous 24h au ${tel || email} pour votre analyse personnalisée.`);
+  }
+
+  function submitDiag(e) {
+    e.preventDefault();
+    const prenom = document.getElementById('diag-prenom').value;
+    alert(`✅ Parfait ${prenom} ! Votre demande de diagnostic est enregistrée. Je vous contacte rapidement pour fixer un rendez-vous.`);
+  }
+
+  // Init simulateurs
+  updatePER(); updateAV();
+</script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prévoyance — Protection Revenus & Famille Besançon, Belfort, Vesoul | MonOptimisationPro</title>
+<meta name="description" content="Expert prévoyance en Franche-Comté. Protégez vos revenus en cas d'arrêt maladie, invalidité ou décès à Besançon, Belfort, Vesoul, Lure, Montbéliard. Diagnostic gratuit.">
+<meta name="keywords" content="prévoyance Besançon, assurance arrêt maladie Belfort, protection revenus Vesoul, prévoyance TNS Lure, incapacité travail Montbéliard, prévoyance Franche-Comté, prévoyance indépendant 25 70 90">
+<link rel="canonical" href="https://monoptimisationpro.fr/prevoyance.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#080f1e; --navy-mid:#0e1f38; --navy-light:#162f52; --gold:#c9a84c; --gold-light:#e2c46e; --gold-pale:#f5e6b8; --muted:#7a8fa8; --light:#b8cce0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--navy); color:#fff; overflow-x:hidden; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:22px 72px; background:rgba(8,15,30,0.96); backdrop-filter:blur(20px); border-bottom:1px solid rgba(201,168,76,0.1); }
+  .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:#fff; letter-spacing:0.04em; text-decoration:none; }
+  .nav-logo span { color:var(--gold); }
+  .nav-links { display:flex; gap:40px; list-style:none; }
+  .nav-links a { color:var(--light); text-decoration:none; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--gold); }
+  .nav-cta { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:10px 28px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; font-weight:500; transition:all 0.3s; }
+  .nav-cta:hover { background:var(--gold); color:var(--navy); }
+  .section { padding:100px 72px; }
+  .s-label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:20px; display:flex; align-items:center; gap:14px; }
+  .s-label::before { content:''; width:28px; height:1px; background:var(--gold); }
+  .s-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,4vw,3.6rem); font-weight:700; line-height:1.15; margin-bottom:20px; }
+  .s-sub { font-size:1rem; color:var(--light); line-height:1.8; font-weight:300; max-width:580px; }
+
+  .page-hero { min-height:60vh; display:flex; align-items:center; padding:140px 72px 80px; background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); position:relative; overflow:hidden; }
+  .ph-content { max-width:680px; }
+  .ph-content .s-sub { max-width:100%; margin-top:20px; }
+  .ph-stats { display:flex; gap:48px; margin-top:48px; }
+  .ph-stat .v { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:700; color:var(--gold); }
+  .ph-stat .l { font-size:0.8rem; color:var(--muted); margin-top:4px; }
+
+  /* STORY */
+  .story-section { background:var(--navy-mid); }
+  .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .story-card { background:var(--navy); border-left:2px solid var(--gold); padding:48px 40px; }
+  .story-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:600; margin-bottom:20px; color:var(--gold); }
+  .story-card p { font-size:0.95rem; color:var(--light); line-height:1.8; margin-bottom:16px; }
+  .story-card .result { margin-top:24px; background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.15); padding:20px 24px; font-size:0.88rem; color:var(--gold-pale); line-height:1.6; }
+
+  /* GARANTIES */
+  .garanties-section { background:var(--navy); }
+  .gar-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(201,168,76,0.06); margin-top:56px; }
+  .gar-card { background:var(--navy); padding:48px 36px; transition:background 0.3s; }
+  .gar-card:hover { background:var(--navy-mid); }
+  .gar-icon { font-size:2rem; margin-bottom:24px; }
+  .gar-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.6rem; margin-bottom:14px; }
+  .gar-card p { font-size:0.9rem; color:var(--muted); line-height:1.7; margin-bottom:20px; }
+  .gar-covered { font-size:0.82rem; color:var(--gold); display:flex; flex-direction:column; gap:8px; }
+  .gar-covered span::before { content:'✓  '; }
+
+  /* QUIZ */
+  .quiz-section { background:var(--navy-mid); }
+  .quiz-intro { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-bottom:56px; }
+  .quiz-wrap { background:var(--navy); border:1px solid rgba(201,168,76,0.12); padding:48px; }
+  .q-title { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold); margin-bottom:32px; }
+  .q-item { margin-bottom:28px; }
+  .q-item label { display:block; font-size:0.82rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:14px; font-weight:600; }
+  .q-options { display:flex; gap:12px; flex-wrap:wrap; }
+  .q-opt { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.15); padding:10px 20px; font-size:0.88rem; cursor:pointer; transition:all 0.2s; color:var(--light); }
+  .q-opt:hover, .q-opt.selected { background:rgba(201,168,76,0.12); border-color:var(--gold); color:var(--gold); }
+  .q-result { display:none; background:rgba(201,168,76,0.06); border-left:2px solid var(--gold); padding:20px 24px; margin-top:24px; color:var(--gold-pale); font-size:0.9rem; line-height:1.7; }
+  .q-result.show { display:block; }
+  .btn-gold { background:var(--gold); color:var(--navy); padding:14px 32px; border:none; cursor:pointer; font-weight:600; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; font-family:'DM Sans',sans-serif; transition:all 0.2s; text-decoration:none; display:inline-block; margin-top:24px; }
+  .btn-gold:hover { background:var(--gold-light); }
+
+  /* CTA */
+  .cta-band { background:var(--navy-light); border-top:1px solid rgba(201,168,76,0.12); border-bottom:1px solid rgba(201,168,76,0.12); padding:80px 72px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
+  .cta-band h2 { font-family:'Cormorant Garamond',serif; font-size:2.5rem; max-width:500px; line-height:1.2; }
+  .cta-band h2 em { font-style:italic; color:var(--gold); }
+
+  footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.08); padding:32px 72px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:#fff; }
+  .footer-logo span { color:var(--gold); }
+  footer p { font-size:0.78rem; color:var(--muted); }
+  footer a { color:var(--muted); text-decoration:none; font-size:0.78rem; }
+
+  @media(max-width:960px) {
+    nav { padding:16px 24px; } .nav-links { display:none; }
+    .section, .page-hero, .cta-band { padding:64px 24px; }
+    .story-grid, .quiz-intro, .gar-grid { grid-template-columns:1fr; }
+    .ph-stats { flex-wrap:wrap; gap:24px; }
+    .cta-band { flex-direction:column; text-align:center; }
+    footer { flex-direction:column; gap:12px; text-align:center; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">MonOptimisation<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="per-retraite.html">PER & Retraite</a></li>
+    <li><a href="assurance-vie.html">Assurance Vie</a></li>
+    <li><a href="prevoyance.html" class="active">Prévoyance</a></li>
+    <li><a href="tel:0685478367" style="color:var(--gold)">📞 06 85 47 83 67</a></li>
+  </ul>
+  <a href="index.html#diagnostic" class="nav-cta">Diagnostic gratuit</a>
+</nav>
+
+<section class="page-hero">
+  <div class="ph-content">
+    <div class="s-label">Prévoyance</div>
+    <div class="s-title">Et si vous ne pouviez<br>plus travailler demain ?<br><em>Êtes-vous vraiment protégé ?</em></div>
+    <p class="s-sub">La Sécurité Sociale couvre bien moins qu'on ne le croit. En cas d'arrêt prolongé, d'invalidité ou de décès, les conséquences financières peuvent être dramatiques. La prévoyance, ça se prépare — pas ça s'improvise.</p>
+    <div class="ph-stats">
+      <div class="ph-stat"><div class="v">52€</div><div class="l">indemnité journalière<br>Sécu pour un salarié</div></div>
+      <div class="ph-stat"><div class="v">1/3</div><div class="l">des actifs sous-protégés<br>sans le savoir</div></div>
+      <div class="ph-stat"><div class="v">6 mois</div><div class="l">durée moyenne d'un<br>arrêt long terme</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTOIRE -->
+<section class="story-section section">
+  <div class="story-grid">
+    <div>
+      <div class="s-label">Scénario réel</div>
+      <div class="s-title">Ce qui arrive quand<br>on n'est pas protégé</div>
+      <p class="s-sub">Ce n'est pas une histoire rare. C'est ce qui arrive à des dizaines de personnes en Franche-Comté chaque année.</p>
+      <p class="s-sub" style="margin-top:16px;">La bonne nouvelle : avec la bonne prévoyance, ce scénario n'existe tout simplement pas. Vos revenus sont maintenus. Votre famille est protégée.</p>
+    </div>
+    <div class="story-card">
+      <h3>Marc, 44 ans — Artisan à Montbéliard</h3>
+      <p>Marc est électricien indépendant. Il gagne bien sa vie — environ 3 200€ net par mois. Pas de prévoyance complémentaire, "ça coûte et j'en aurai jamais besoin".</p>
+      <p>En janvier, accident sur chantier. Fracture du poignet. Arrêt de travail : 5 mois.</p>
+      <p>La CPAM lui verse ses indemnités journalières : <strong style="color:var(--gold)">18€/jour</strong> les 3 premiers mois, puis <strong style="color:var(--gold)">rien</strong> comme TNS.</p>
+      <div class="result">
+        ⚠️ Résultat : 5 mois sans revenus. Épargne entièrement consommée. Crédit immobilier en difficulté. Stress familial intense.<br><br>
+        Avec une prévoyance adaptée à 45€/mois : ses revenus auraient été maintenus à 80%. Rien ne se serait passé.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIES -->
+<section class="garanties-section section">
+  <div class="s-label">Les garanties</div>
+  <div class="s-title">Ce qu'une bonne prévoyance<br>couvre vraiment</div>
+  <div class="gar-grid">
+    <div class="gar-card">
+      <div class="gar-icon">🏥</div>
+      <h3>Incapacité temporaire</h3>
+      <p>Vous êtes en arrêt maladie ou accident. Une indemnité journalière complémentaire maintient votre niveau de vie.</p>
+      <div class="gar-covered">
+        <span>Maladie et accident</span>
+        <span>Dès le 1er ou 4ème jour</span>
+        <span>Jusqu'à 3 ans de couverture</span>
+      </div>
+    </div>
+    <div class="gar-card">
+      <div class="gar-icon">♿</div>
+      <h3>Invalidité permanente</h3>
+      <p>Vous ne pouvez plus exercer votre activité. Une rente mensuelle remplace tout ou partie de vos revenus professionnels.</p>
+      <div class="gar-covered">
+        <span>Invalidité partielle et totale</span>
+        <span>Rente versée jusqu'à la retraite</span>
+        <span>Maintien du niveau de vie</span>
+      </div>
+    </div>
+    <div class="gar-card">
+      <div class="gar-icon">🛡️</div>
+      <h3>Décès & Famille</h3>
+      <p>En cas de décès, vos proches reçoivent un capital ou une rente. Leur avenir financier est sécurisé, quoi qu'il arrive.</p>
+      <div class="gar-covered">
+        <span>Capital décès immédiat</span>
+        <span>Rente éducation pour les enfants</span>
+        <span>Doublement en cas d'accident</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section section">
+  <div class="quiz-intro">
+    <div>
+      <div class="s-label">Évaluation</div>
+      <div class="s-title">Êtes-vous bien<br>protégé ?</div>
+      <p class="s-sub">Répondez à 3 questions pour obtenir une première estimation de votre niveau de protection — et ce qu'il faudrait mettre en place.</p>
+    </div>
+    <div class="quiz-wrap">
+      <div class="q-title">Diagnostic prévoyance express</div>
+      <div class="q-item">
+        <label>Votre statut professionnel</label>
+        <div class="q-options">
+          <div class="q-opt" onclick="select(this,'s1','salarié')">Salarié</div>
+          <div class="q-opt" onclick="select(this,'s1','tns')">TNS / Indépendant</div>
+          <div class="q-opt" onclick="select(this,'s1','fonctionnaire')">Fonctionnaire</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <label>Vous avez une prévoyance complémentaire ?</label>
+        <div class="q-options">
+          <div class="q-opt" onclick="select(this,'s2','oui')">Oui, via mon employeur</div>
+          <div class="q-opt" onclick="select(this,'s2','perso')">Oui, à titre personnel</div>
+          <div class="q-opt" onclick="select(this,'s2','non')">Non / Je ne sais pas</div>
+        </div>
+      </div>
+      <div class="q-item">
+        <label>Vous avez des personnes à charge ?</label>
+        <div class="q-options">
+          <div class="q-opt" onclick="select(this,'s3','oui');showResult()">Oui</div>
+          <div class="q-opt" onclick="select(this,'s3','non');showResult()">Non</div>
+        </div>
+      </div>
+      <div class="q-result" id="q-result">
+        ⚠️ D'après vos réponses, votre niveau de protection mérite d'être revu. Un arrêt de travail prolongé pourrait significativement impacter vos revenus et ceux de votre famille. Je vous recommande un diagnostic personnalisé gratuit pour identifier exactement ce qui manque.
+      </div>
+      <a href="index.html#diagnostic" class="btn-gold">Obtenir mon diagnostic →</a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Votre protection mérite <em>une vraie analyse.</em></h2>
+  <a href="index.html#diagnostic" class="btn-gold">Diagnostic prévoyance gratuit →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">MonOptimisation<span>Pro</span></div>
+  <p>© 2025 MonOptimisationPro.fr</p>
+  <a href="#">Mentions légales</a>
+</footer>
+
+<script>
+  const answers = {};
+  function select(el, key, val) {
+    document.querySelectorAll(`[onclick*="${key}"]`).forEach(e => e.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[key] = val;
+  }
+  function showResult() {
+    document.getElementById('q-result').classList.add('show');
+  }
+</script>
+</body>
+</html>

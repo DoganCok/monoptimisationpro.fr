@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Optimisation Fiscale & Patrimoine en Franche-Comté | MonOptimisationPro</title>
+<meta name="description" content="Conseils, guides et actualités sur l'optimisation fiscale, le PER, l'assurance vie, la prévoyance et la dépendance en Franche-Comté. Expert local à Besançon, Belfort, Vesoul.">
+<meta name="keywords" content="blog optimisation fiscale Franche-Comté, conseils patrimoine Besançon, actualités PER Belfort, guide assurance vie Vesoul, prévoyance TNS Montbéliard">
+<link rel="canonical" href="https://monoptimisationpro.fr/blog.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CL0FRFV41Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CL0FRFV41Y');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#080f1e; --navy-mid:#0e1f38; --navy-light:#162f52; --gold:#c9a84c; --gold-light:#e2c46e; --gold-pale:#f5e6b8; --muted:#7a8fa8; --light:#b8cce0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--navy); color:#fff; overflow-x:hidden; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:22px 72px; background:rgba(8,15,30,0.96); backdrop-filter:blur(20px); border-bottom:1px solid rgba(201,168,76,0.1); }
+  .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:#fff; letter-spacing:0.04em; text-decoration:none; }
+  .nav-logo span { color:var(--gold); }
+  .nav-links { display:flex; gap:32px; list-style:none; }
+  .nav-links a { color:var(--light); text-decoration:none; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--gold); }
+  .nav-cta { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:10px 28px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; font-weight:500; transition:all 0.3s; }
+  .nav-cta:hover { background:var(--gold); color:var(--navy); }
+
+  /* HERO */
+  .page-hero { padding:140px 72px 80px; background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-bottom:1px solid rgba(201,168,76,0.1); position:relative; overflow:hidden; }
+  .page-hero::before { content:''; position:absolute; right:-100px; top:-100px; width:500px; height:500px; border-radius:50%; border:1px solid rgba(201,168,76,0.05); pointer-events:none; }
+  .s-label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:20px; display:flex; align-items:center; gap:14px; }
+  .s-label::before { content:''; width:28px; height:1px; background:var(--gold); }
+  .page-hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.8rem,5vw,4.2rem); font-weight:700; line-height:1.1; margin-bottom:20px; }
+  .page-hero p { font-size:1rem; color:var(--light); line-height:1.8; max-width:580px; font-weight:300; }
+
+  /* FILTRES */
+  .filters { padding:40px 72px 0; display:flex; gap:12px; flex-wrap:wrap; }
+  .filter-btn { background:transparent; border:1px solid rgba(201,168,76,0.2); color:var(--muted); padding:8px 20px; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; }
+  .filter-btn:hover, .filter-btn.active { background:rgba(201,168,76,0.1); border-color:var(--gold); color:var(--gold); }
+
+  /* ARTICLES GRID */
+  .blog-section { padding:48px 72px 100px; }
+  .featured-article { display:grid; grid-template-columns:1fr 1fr; gap:0; background:var(--navy-mid); border:1px solid rgba(201,168,76,0.12); margin-bottom:48px; transition:all 0.3s; text-decoration:none; color:inherit; }
+  .featured-article:hover { border-color:rgba(201,168,76,0.35); transform:translateY(-4px); box-shadow:0 24px 60px rgba(0,0,0,0.4); }
+  .featured-img { background:linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%); display:flex; align-items:center; justify-content:center; min-height:280px; position:relative; overflow:hidden; }
+  .featured-img::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at center, rgba(201,168,76,0.08) 0%, transparent 70%); }
+  .featured-emoji { font-size:5rem; position:relative; z-index:1; }
+  .featured-content { padding:48px 44px; display:flex; flex-direction:column; justify-content:space-between; }
+  .art-tag { display:inline-block; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.2); padding:4px 14px; font-size:0.7rem; letter-spacing:0.1em; color:var(--gold); text-transform:uppercase; margin-bottom:20px; }
+  .art-badge { display:inline-block; background:var(--gold); color:var(--navy); padding:4px 12px; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; margin-left:8px; }
+  .featured-content h2 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:700; line-height:1.2; margin-bottom:16px; color:#fff; }
+  .featured-content p { font-size:0.92rem; color:var(--muted); line-height:1.7; margin-bottom:28px; flex:1; }
+  .art-meta { display:flex; align-items:center; justify-content:space-between; }
+  .art-date { font-size:0.78rem; color:var(--muted); }
+  .art-link { font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:8px; transition:gap 0.2s; }
+  .featured-article:hover .art-link { gap:14px; }
+
+  /* GRILLE ARTICLES */
+  .articles-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:rgba(201,168,76,0.06); margin-bottom:48px; }
+  .article-card { background:var(--navy); padding:40px 36px; transition:all 0.3s; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
+  .article-card:hover { background:var(--navy-mid); transform:translateY(-4px); }
+  .card-icon { font-size:2.2rem; margin-bottom:20px; }
+  .article-card .art-tag { margin-bottom:16px; }
+  .article-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; line-height:1.25; margin-bottom:14px; color:#fff; flex:1; }
+  .article-card p { font-size:0.88rem; color:var(--muted); line-height:1.65; margin-bottom:24px; }
+  .article-card .art-meta { margin-top:auto; }
+
+  /* CTA NEWSLETTER */
+  .newsletter-band { background:var(--navy-light); border:1px solid rgba(201,168,76,0.12); padding:56px 72px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; margin-bottom:0; }
+  .nl-content h2 { font-family:'Cormorant Garamond',serif; font-size:2rem; margin-bottom:12px; }
+  .nl-content h2 em { font-style:italic; color:var(--gold); }
+  .nl-content p { font-size:0.92rem; color:var(--muted); line-height:1.65; }
+  .nl-form { display:flex; gap:0; }
+  .nl-form input { flex:1; background:var(--navy-mid); border:1px solid rgba(201,168,76,0.2); border-right:none; color:#fff; padding:14px 20px; font-family:'DM Sans',sans-serif; font-size:0.92rem; outline:none; }
+  .nl-form input:focus { border-color:var(--gold); }
+  .nl-form input::placeholder { color:var(--muted); }
+  .btn-gold { background:var(--gold); color:var(--navy); padding:14px 28px; border:none; cursor:pointer; font-weight:600; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; font-family:'DM Sans',sans-serif; white-space:nowrap; transition:all 0.2s; text-decoration:none; display:inline-block; }
+  .btn-gold:hover { background:var(--gold-light); }
+
+  footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.08); padding:32px 72px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:#fff; }
+  .footer-logo span { color:var(--gold); }
+  footer p { font-size:0.78rem; color:var(--muted); }
+  footer a { color:var(--muted); text-decoration:none; font-size:0.78rem; }
+
+  @media(max-width:960px) {
+    nav { padding:16px 24px; } .nav-links { display:none; }
+    .page-hero, .blog-section, .filters { padding-left:24px; padding-right:24px; }
+    .featured-article { grid-template-columns:1fr; }
+    .featured-img { min-height:180px; }
+    .articles-grid { grid-template-columns:1fr; }
+    .newsletter-band { grid-template-columns:1fr; padding:40px 24px; gap:28px; }
+    .nl-form { flex-direction:column; }
+    .nl-form input { border-right:1px solid rgba(201,168,76,0.2); }
+    footer { flex-direction:column; gap:12px; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">MonOptimisation<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="per-retraite.html">PER & Retraite</a></li>
+    <li><a href="assurance-vie.html">Assurance Vie</a></li>
+    <li><a href="prevoyance.html">Prévoyance</a></li>
+    <li><a href="dependance.html">Dépendance</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="tel:0685478367" style="color:var(--gold)">📞 06 85 47 83 67</a></li>
+  </ul>
+  <a href="index.html#diagnostic" class="nav-cta">Diagnostic gratuit</a>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="s-label">Conseils & Guides</div>
+  <h1>Le blog de l'optimisation<br>patrimoniale en <em style="font-style:italic;color:var(--gold)">Franche-Comté</em></h1>
+  <p>Fiscalité, retraite, prévoyance, dépendance — des articles concrets rédigés par un expert local pour les actifs de Besançon, Belfort, Vesoul et toute la région.</p>
+</section>
+
+<!-- FILTRES -->
+<div class="filters">
+  <button class="filter-btn active">Tous</button>
+  <button class="filter-btn">Fiscalité</button>
+  <button class="filter-btn">Épargne & Retraite</button>
+  <button class="filter-btn">Prévoyance</button>
+  <button class="filter-btn">Dépendance</button>
+</div>
+
+<!-- ARTICLES -->
+<div class="blog-section">
+
+  <!-- ARTICLE FEATURED -->
+  <a href="blog-reduire-impots-besancon.html" class="featured-article">
+    <div class="featured-img">
+      <div class="featured-emoji">💸</div>
+    </div>
+    <div class="featured-content">
+      <div>
+        <div><span class="art-tag">Fiscalité</span><span class="art-badge">À lire</span></div>
+        <h2>Comment réduire ses impôts à Besançon en 2025 : 5 solutions légales</h2>
+        <p>Chaque année, des milliers d'actifs bisontins surpaient leurs impôts faute d'information. Voici les 5 leviers concrets et légaux pour alléger votre facture fiscale dès cette année — PER, assurance vie, dons, travaux et épargne salariale.</p>
+      </div>
+      <div class="art-meta">
+        <span class="art-date">Mars 2025 — Besançon, Doubs</span>
+        <span class="art-link">Lire l'article →</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- GRILLE 3 ARTICLES -->
+  <div class="articles-grid">
+
+    <a href="blog-per-assurance-vie-franche-comte.html" class="article-card">
+      <div class="card-icon">📊</div>
+      <span class="art-tag">Épargne & Retraite</span>
+      <h3>PER ou Assurance Vie : que choisir en Franche-Comté ?</h3>
+      <p>PER et assurance vie sont complémentaires — mais selon votre profil, l'un prime sur l'autre. Comparatif complet pour les actifs de la région.</p>
+      <div class="art-meta">
+        <span class="art-date">Mars 2025 — Franche-Comté</span>
+        <span class="art-link">Lire →</span>
+      </div>
+    </a>
+
+    <a href="blog-prevoyance-tns-belfort.html" class="article-card">
+      <div class="card-icon">🛡️</div>
+      <span class="art-tag">Prévoyance</span>
+      <h3>Prévoyance TNS à Belfort : ce que la Sécu ne couvre pas</h3>
+      <p>Artisan, commerçant, profession libérale dans le Territoire de Belfort : voici la réalité de votre couverture sociale et comment vous protéger efficacement.</p>
+      <div class="art-meta">
+        <span class="art-date">Mars 2025 — Belfort, T. de Belfort</span>
+        <span class="art-link">Lire →</span>
+      </div>
+    </a>
+
+    <a href="dependance.html" class="article-card">
+      <div class="card-icon">🏥</div>
+      <span class="art-tag">Dépendance</span>
+      <h3>Dépendance : pourquoi 1 Français sur 2 n'est pas préparé</h3>
+      <p>Le coût d'un EHPAD en Franche-Comté dépasse 2 500€/mois. Sans préparation, c'est votre famille qui supporte. Découvrez comment anticiper.</p>
+      <div class="art-meta">
+        <span class="art-date">Avril 2025 — Franche-Comté</span>
+        <span class="art-link">Lire →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- PROCHAINS ARTICLES (à venir) -->
+  <div style="text-align:center; padding:40px 0 20px;">
+    <div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:12px;">Prochainement</div>
+    <p style="font-size:0.92rem; color:var(--muted); line-height:1.7;">De nouveaux articles arrivent chaque mois sur la fiscalité, le patrimoine<br>et la protection en Franche-Comté.</p>
+  </div>
+
+</div>
+
+<!-- NEWSLETTER / DIAGNOSTIC -->
+<div class="newsletter-band">
+  <div class="nl-content">
+    <h2>Recevez nos conseils<br><em>directement par email</em></h2>
+    <p>Chaque mois, un conseil actionnable sur l'optimisation fiscale et patrimoniale en Franche-Comté. Zéro spam, désinscription en un clic.</p>
+  </div>
+  <div>
+    <form style="display:flex;flex-direction:column;gap:12px;" onsubmit="submitNL(event)">
+      <div class="nl-form">
+        <input type="email" placeholder="Votre adresse email" id="nl-email" required>
+        <button type="submit" class="btn-gold">Je m'inscris →</button>
+      </div>
+      <p style="font-size:0.75rem;color:var(--muted);">🔒 Données confidentielles — jamais revendues</p>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">MonOptimisation<span>Pro</span></div>
+  <p>© 2025 MonOptimisationPro.fr — Tous droits réservés</p>
+  <a href="mentions-legales.html">Mentions légales</a>
+</footer>
+
+<script>
+  async function submitNL(e) {
+    e.preventDefault();
+    const em = document.getElementById('nl-email').value;
+    await fetch('https://formspree.io/f/mwvrdkzl', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ email:em, source:'Newsletter Blog', _subject:'📧 Nouvelle inscription newsletter — MonOptimisationPro' })
+    });
+    alert('✅ Merci ! Vous recevrez nos prochains conseils par email.');
+  }
+
+  // Filtres (UX simple)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

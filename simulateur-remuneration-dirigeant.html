@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulateur Rémunération Dirigeant SARL SASU SAS 2025 — Salaire ou Dividendes ? | MonOptimisationPro</title>
+<meta name="description" content="Simulateur gratuit : salaire ou dividendes pour votre SARL, SASU ou SAS ? Calculez la rémunération optimale pour votre situation à Besançon et en Franche-Comté. Expert local.">
+<meta name="keywords" content="simulateur rémunération dirigeant SARL SASU SAS, salaire ou dividendes Besançon, optimisation rémunération dirigeant Franche-Comté, créer SASU Besançon, dividendes ou salaire 2025, rémunération gérant SARL Belfort">
+<meta name="geo.region" content="FR-BFC">
+<meta name="geo.placename" content="Besançon, Belfort, Vesoul, Franche-Comté">
+<meta name="geo.position" content="47.2378;6.0241">
+<meta name="ICBM" content="47.2378, 6.0241">
+<meta name="language" content="fr-FR">
+<link rel="canonical" href="https://monoptimisationpro.fr/simulateur-remuneration-dirigeant.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CL0FRFV41Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CL0FRFV41Y');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Schema FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vaut-il mieux se verser un salaire ou des dividendes en SASU ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En SASU, le salaire génère des cotisations sociales élevées (environ 82% du net) mais ouvre des droits sociaux. Les dividendes sont soumis à la flat tax de 30% mais sans cotisations sociales. La stratégie optimale est souvent un mix : un salaire minimum pour les droits sociaux, et le reste en dividendes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre SARL et SASU pour la rémunération du dirigeant ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En SARL, le gérant majoritaire est TNS (cotisations SSI d'environ 45%). En SASU, le président est assimilé salarié (cotisations d'environ 82% mais meilleure protection sociale). Les dividendes en SARL dépassant 10% du capital sont soumis aux cotisations TNS, pas en SASU."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --navy:#080f1e; --navy-mid:#0e1f38; --navy-light:#162f52;
+    --gold:#c9a84c; --gold-light:#e2c46e; --gold-pale:#f5e6b8;
+    --muted:#7a8fa8; --light:#b8cce0;
+    --green:#4ade80; --red:#f87171; --blue:#60a5fa;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--navy); color:#fff; overflow-x:hidden; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:22px 72px; background:rgba(8,15,30,0.96); backdrop-filter:blur(20px); border-bottom:1px solid rgba(201,168,76,0.1); }
+  .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:#fff; letter-spacing:0.04em; text-decoration:none; }
+  .nav-logo span { color:var(--gold); }
+  .nav-links { display:flex; gap:32px; list-style:none; }
+  .nav-links a { color:var(--light); text-decoration:none; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--gold); }
+  .nav-cta { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:10px 28px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; font-weight:500; transition:all 0.3s; }
+  .nav-cta:hover { background:var(--gold); color:var(--navy); }
+
+  /* HERO */
+  .page-hero { padding:140px 72px 80px; background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-bottom:1px solid rgba(201,168,76,0.1); position:relative; overflow:hidden; }
+  .page-hero::before { content:''; position:absolute; right:0; top:0; bottom:0; width:45%; background:linear-gradient(135deg, rgba(201,168,76,0.03) 0%, transparent 100%); pointer-events:none; }
+  .s-label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:20px; display:flex; align-items:center; gap:14px; }
+  .s-label::before { content:''; width:28px; height:1px; background:var(--gold); }
+  .page-hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,4.5vw,4rem); font-weight:700; line-height:1.1; max-width:780px; margin-bottom:20px; }
+  .page-hero p { font-size:1rem; color:var(--light); line-height:1.8; max-width:620px; font-weight:300; margin-bottom:32px; }
+  .hero-badges { display:flex; gap:12px; flex-wrap:wrap; }
+  .badge { background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.2); padding:6px 16px; font-size:0.78rem; color:var(--gold); letter-spacing:0.06em; }
+
+  /* SIMULATEUR PRINCIPAL */
+  .sim-section { padding:60px 72px; background:var(--navy); }
+  .sim-container { display:grid; grid-template-columns:420px 1fr; gap:40px; align-items:start; }
+
+  /* PANNEAU GAUCHE — INPUTS */
+  .sim-inputs { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.15); padding:40px; position:sticky; top:90px; }
+  .sim-inputs h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--gold); margin-bottom:32px; }
+  .input-group { margin-bottom:28px; }
+  .input-group label { display:block; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px; }
+  .input-group .val-display { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold); margin-bottom:10px; }
+  input[type=range] { width:100%; -webkit-appearance:none; height:2px; background:rgba(201,168,76,0.15); outline:none; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:var(--gold); cursor:pointer; }
+  .structure-btns { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+  .str-btn { background:var(--navy); border:1px solid rgba(201,168,76,0.2); color:var(--muted); padding:12px 8px; font-size:0.85rem; font-weight:600; cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; text-align:center; }
+  .str-btn:hover { border-color:var(--gold); color:var(--gold); }
+  .str-btn.active { background:rgba(201,168,76,0.15); border-color:var(--gold); color:var(--gold); }
+  .str-btn small { display:block; font-size:0.68rem; color:var(--muted); font-weight:400; margin-top:2px; }
+  .tmi-select { width:100%; background:var(--navy); border:1px solid rgba(201,168,76,0.2); color:#fff; padding:12px 16px; font-family:'DM Sans',sans-serif; font-size:0.95rem; outline:none; }
+  .remun-slider-wrap { margin-bottom:0; }
+  .pct-display { display:flex; justify-content:space-between; margin-bottom:6px; }
+  .pct-display span { font-size:0.8rem; color:var(--muted); }
+  .pct-display .val { color:var(--gold); font-weight:600; }
+
+  /* PANNEAU DROITE — RÉSULTATS */
+  .sim-results-wrap { display:flex; flex-direction:column; gap:24px; }
+
+  /* CARDS SCÉNARIOS */
+  .scenarios-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; background:rgba(201,168,76,0.06); }
+  .scenario-card { background:var(--navy); padding:32px 28px; position:relative; transition:background 0.3s; }
+  .scenario-card.best { background:rgba(201,168,76,0.05); }
+  .scenario-card.best::before { content:'⭐ Optimal'; position:absolute; top:0; right:0; background:var(--gold); color:var(--navy); font-size:0.65rem; font-weight:700; padding:4px 10px; letter-spacing:0.08em; }
+  .sc-title { font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; font-weight:600; }
+  .sc-net { font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:700; color:var(--gold); line-height:1; margin-bottom:4px; }
+  .sc-net-label { font-size:0.78rem; color:var(--muted); margin-bottom:20px; }
+  .sc-breakdown { display:flex; flex-direction:column; gap:8px; }
+  .sc-line { display:flex; justify-content:space-between; font-size:0.82rem; padding:6px 0; border-bottom:1px solid rgba(201,168,76,0.06); }
+  .sc-line:last-child { border-bottom:none; }
+  .sc-line .lbl { color:var(--muted); }
+  .sc-line .amt { font-weight:600; }
+  .sc-line .amt.green { color:var(--green); }
+  .sc-line .amt.red { color:var(--red); }
+  .sc-line .amt.gold { color:var(--gold); }
+
+  /* GRAPHIQUE COMPARATIF */
+  .chart-wrap { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.1); padding:36px; }
+  .chart-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:28px; color:var(--gold); }
+  .bar-chart { display:flex; flex-direction:column; gap:20px; }
+  .bar-row { display:flex; align-items:center; gap:16px; }
+  .bar-label { font-size:0.8rem; color:var(--muted); width:130px; flex-shrink:0; }
+  .bar-track { flex:1; background:rgba(255,255,255,0.05); height:36px; position:relative; border-radius:2px; overflow:hidden; }
+  .bar-fill { height:100%; border-radius:2px; transition:width 0.6s ease; display:flex; align-items:center; justify-content:flex-end; padding-right:12px; }
+  .bar-fill .bar-val { font-size:0.82rem; font-weight:700; color:var(--navy); white-space:nowrap; }
+  .bar-fill.salary { background:linear-gradient(90deg, #60a5fa, #3b82f6); }
+  .bar-fill.dividends { background:linear-gradient(90deg, #4ade80, #22c55e); }
+  .bar-fill.mix { background:linear-gradient(90deg, var(--gold-light), var(--gold)); }
+
+  /* DÉTAIL FISCAL */
+  .fiscal-detail { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.1); padding:36px; }
+  .fd-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; margin-bottom:24px; color:var(--gold); }
+  .fd-tabs { display:flex; gap:2px; margin-bottom:28px; }
+  .fd-tab { background:var(--navy); border:1px solid rgba(201,168,76,0.1); padding:10px 20px; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; color:var(--muted); font-family:'DM Sans',sans-serif; }
+  .fd-tab.active { background:rgba(201,168,76,0.12); border-color:var(--gold); color:var(--gold); }
+  .fd-content { display:none; }
+  .fd-content.active { display:block; }
+  .fd-table { width:100%; border-collapse:collapse; }
+  .fd-table th { background:var(--navy-light); padding:12px 16px; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); font-weight:600; text-align:left; }
+  .fd-table td { padding:12px 16px; font-size:0.88rem; color:var(--light); border-bottom:1px solid rgba(201,168,76,0.05); }
+  .fd-table tr:hover td { background:rgba(201,168,76,0.03); }
+  .fd-table .positive { color:var(--green); font-weight:600; }
+  .fd-table .negative { color:var(--red); }
+  .fd-table .total td { border-top:1px solid rgba(201,168,76,0.15); font-weight:700; color:#fff; }
+
+  /* RECOMMANDATION */
+  .reco-box { background:rgba(201,168,76,0.07); border:1px solid rgba(201,168,76,0.2); padding:28px 32px; }
+  .reco-title { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--gold); margin-bottom:12px; }
+  .reco-text { font-size:0.92rem; color:var(--light); line-height:1.7; }
+
+  /* CAPTURE */
+  .capture-wrap { background:var(--navy-light); border:1px solid rgba(201,168,76,0.15); padding:36px; }
+  .capture-wrap h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; margin-bottom:8px; }
+  .capture-wrap p { font-size:0.88rem; color:var(--muted); line-height:1.6; margin-bottom:24px; }
+  .capture-grid { display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:12px; }
+  .capture-grid input { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.2); color:#fff; padding:14px 18px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s; }
+  .capture-grid input:focus { border-color:var(--gold); }
+  .capture-grid input::placeholder { color:var(--muted); }
+  .btn-gold { background:var(--gold); color:var(--navy); padding:14px 28px; border:none; cursor:pointer; font-weight:600; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; font-family:'DM Sans',sans-serif; white-space:nowrap; transition:all 0.2s; text-decoration:none; display:inline-block; }
+  .btn-gold:hover { background:var(--gold-light); }
+
+  /* EXPLICATIONS */
+  .expl-section { padding:80px 72px; background:var(--navy-mid); }
+  .expl-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; background:rgba(201,168,76,0.06); margin-top:48px; }
+  .expl-card { background:var(--navy); padding:40px 32px; }
+  .expl-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; margin-bottom:16px; }
+  .expl-card .tag { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; display:block; }
+  .expl-card p { font-size:0.88rem; color:var(--muted); line-height:1.7; margin-bottom:16px; }
+  .expl-card ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .expl-card ul li { font-size:0.85rem; color:var(--light); padding-left:16px; position:relative; }
+  .expl-card ul li::before { content:'→'; position:absolute; left:0; color:var(--gold); }
+
+  /* FAQ */
+  .faq-section { padding:80px 72px; background:var(--navy); }
+  .faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:48px; }
+  .faq-item { border:1px solid rgba(201,168,76,0.08); padding:28px 32px; transition:border-color 0.3s; }
+  .faq-item:hover { border-color:rgba(201,168,76,0.2); }
+  .faq-item h4 { font-family:'Cormorant Garamond',serif; font-size:1.15rem; margin-bottom:12px; color:#fff; }
+  .faq-item p { font-size:0.88rem; color:var(--muted); line-height:1.7; }
+
+  /* CTA */
+  .cta-band { background:var(--navy-light); border-top:1px solid rgba(201,168,76,0.12); padding:80px 72px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
+  .cta-band h2 { font-family:'Cormorant Garamond',serif; font-size:2.4rem; max-width:560px; line-height:1.2; }
+  .cta-band h2 em { font-style:italic; color:var(--gold); }
+
+  footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.08); padding:32px 72px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:#fff; }
+  .footer-logo span { color:var(--gold); }
+  footer p { font-size:0.78rem; color:var(--muted); }
+  footer a { color:var(--muted); text-decoration:none; font-size:0.78rem; }
+
+  @media(max-width:1100px) {
+    .sim-container { grid-template-columns:1fr; }
+    .sim-inputs { position:static; }
+    .scenarios-grid { grid-template-columns:1fr; }
+    .capture-grid { grid-template-columns:1fr; }
+  }
+  @media(max-width:960px) {
+    nav { padding:16px 24px; } .nav-links { display:none; }
+    .page-hero, .sim-section, .expl-section, .faq-section, .cta-band { padding-left:24px; padding-right:24px; }
+    .expl-grid { grid-template-columns:1fr; }
+    .faq-grid { grid-template-columns:1fr; }
+    .cta-band { flex-direction:column; text-align:center; }
+    footer { flex-direction:column; gap:12px; text-align:center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">MonOptimisation<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="per-retraite.html">PER & Retraite</a></li>
+    <li><a href="assurance-vie.html">Assurance Vie</a></li>
+    <li><a href="prevoyance.html">Prévoyance</a></li>
+    <li><a href="dependance.html">Dépendance</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tel:0685478367" style="color:var(--gold)">📞 06 85 47 83 67</a></li>
+  </ul>
+  <a href="index.html#diagnostic" class="nav-cta">Diagnostic gratuit</a>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="s-label">Simulateur Dirigeant</div>
+  <h1>Salaire ou dividendes ?<br>Trouvez la rémunération<br><em style="font-style:italic;color:var(--gold)">optimale pour votre structure.</em></h1>
+  <p>SARL, SASU ou SAS — simulez en temps réel l'impact fiscal et social de votre rémunération. Comparez 3 scénarios et identifiez la stratégie la plus avantageuse pour votre situation.</p>
+  <div class="hero-badges">
+    <span class="badge">SARL — Gérant TNS</span>
+    <span class="badge">SASU — Président assimilé salarié</span>
+    <span class="badge">SAS — Associé dirigeant</span>
+    <span class="badge">Données 2025</span>
+  </div>
+</section>
+
+<!-- SIMULATEUR -->
+<section class="sim-section">
+  <div class="sim-container">
+
+    <!-- INPUTS -->
+    <div class="sim-inputs">
+      <h3>Votre situation</h3>
+
+      <div class="input-group">
+        <label>Résultat net de votre société</label>
+        <div class="val-display" id="resultat-display">80 000 €</div>
+        <input type="range" min="20000" max="500000" step="5000" value="80000" oninput="simulate()" id="resultat">
+      </div>
+
+      <div class="input-group">
+        <label>Votre structure juridique</label>
+        <div class="structure-btns">
+          <div class="str-btn active" onclick="setStructure('sarl', this)">SARL<small>Gérant TNS</small></div>
+          <div class="str-btn" onclick="setStructure('sasu', this)">SASU<small>Assimilé sal.</small></div>
+          <div class="str-btn" onclick="setStructure('sas', this)">SAS<small>Associé</small></div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Votre TMI (Tranche Marginale d'Imposition)</label>
+        <select class="tmi-select" onchange="simulate()" id="tmi">
+          <option value="0.11">11%</option>
+          <option value="0.30" selected>30%</option>
+          <option value="0.41">41%</option>
+          <option value="0.45">45%</option>
+        </select>
+      </div>
+
+      <div class="input-group remun-slider-wrap">
+        <label>Part en salaire (scénario mixte)</label>
+        <div class="pct-display">
+          <span>Salaire</span>
+          <span class="val" id="mix-pct-display">50%</span>
+          <span>Dividendes</span>
+        </div>
+        <input type="range" min="0" max="100" step="5" value="50" oninput="simulate()" id="mix-pct">
+      </div>
+
+      <div style="margin-top:8px;padding:16px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.1);">
+        <p style="font-size:0.78rem;color:var(--muted);line-height:1.6;">⚠️ Simulation indicative. Les taux utilisés sont des moyennes 2025. Consultez un expert pour une analyse précise de votre situation.</p>
+      </div>
+    </div>
+
+    <!-- RÉSULTATS -->
+    <div class="sim-results-wrap">
+
+      <!-- 3 SCÉNARIOS -->
+      <div class="scenarios-grid" id="scenarios-grid">
+        <!-- Rempli par JS -->
+      </div>
+
+      <!-- GRAPHIQUE -->
+      <div class="chart-wrap">
+        <div class="chart-title">Comparaison — Revenu net disponible</div>
+        <div class="bar-chart" id="bar-chart">
+          <!-- Rempli par JS -->
+        </div>
+      </div>
+
+      <!-- DÉTAIL FISCAL PAR ONGLET -->
+      <div class="fiscal-detail">
+        <div class="fd-title">Détail du calcul</div>
+        <div class="fd-tabs">
+          <div class="fd-tab active" onclick="switchTab('salary', this)">100% Salaire</div>
+          <div class="fd-tab" onclick="switchTab('dividends', this)">100% Dividendes</div>
+          <div class="fd-tab" onclick="switchTab('mix', this)">Mix optimal</div>
+        </div>
+        <div class="fd-content active" id="tab-salary"></div>
+        <div class="fd-content" id="tab-dividends"></div>
+        <div class="fd-content" id="tab-mix"></div>
+      </div>
+
+      <!-- RECOMMANDATION -->
+      <div class="reco-box">
+        <div class="reco-title">💡 Recommandation personnalisée</div>
+        <div class="reco-text" id="reco-text">Ajustez les paramètres pour voir votre recommandation.</div>
+      </div>
+
+      <!-- CAPTURE LEAD -->
+      <div class="capture-wrap">
+        <h3>Obtenez une analyse complète</h3>
+        <p>Cette simulation est indicative. Pour un calcul précis intégrant votre situation personnelle, votre secteur et vos objectifs patrimoniaux (PER, prévoyance TNS...) :</p>
+        <div class="capture-grid">
+          <input type="text" placeholder="Prénom" id="cap-p">
+          <input type="email" placeholder="Email" id="cap-e">
+          <input type="tel" placeholder="Téléphone" id="cap-t">
+          <button class="btn-gold" onclick="submitLead()">Analyse gratuite →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPLICATIONS -->
+<section class="expl-section">
+  <div class="s-label">Comprendre les structures</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.2;">SARL, SASU, SAS —<br>Les différences qui comptent</h2>
+  <div class="expl-grid">
+    <div class="expl-card">
+      <span class="tag">SARL — Gérant majoritaire</span>
+      <h3>Régime TNS</h3>
+      <p>Le gérant majoritaire de SARL cotise au régime SSI (ex-RSI). Les cotisations sont plus faibles mais la protection sociale aussi.</p>
+      <ul>
+        <li>Cotisations sociales : ~45% du net</li>
+        <li>Dividendes &gt; 10% du capital : soumis aux cotisations</li>
+        <li>Avantage : coût salarial moindre</li>
+        <li>Inconvénient : protection sociale inférieure</li>
+        <li>Prévoyance TNS indispensable</li>
+      </ul>
+    </div>
+    <div class="expl-card">
+      <span class="tag">SASU — Président</span>
+      <h3>Assimilé salarié</h3>
+      <p>Le président de SASU est assimilé salarié. Cotisations plus élevées mais droits sociaux similaires à un salarié cadre.</p>
+      <ul>
+        <li>Cotisations sociales : ~82% du net</li>
+        <li>Dividendes : flat tax 30% uniquement</li>
+        <li>Avantage : meilleure protection sociale</li>
+        <li>Inconvénient : coût salarial élevé</li>
+        <li>Stratégie dividendes très efficace</li>
+      </ul>
+    </div>
+    <div class="expl-card">
+      <span class="tag">SAS — Dirigeant associé</span>
+      <h3>Flexibilité maximale</h3>
+      <p>La SAS offre la plus grande souplesse dans la répartition des bénéfices entre associés. Idéale pour les projets avec plusieurs fondateurs.</p>
+      <ul>
+        <li>Même régime social que la SASU</li>
+        <li>Dividendes librement répartis entre associés</li>
+        <li>Avantage : flexibilité et attractivité</li>
+        <li>Inconvénient : coût salarial élevé si rémunéré</li>
+        <li>Optimisation via holding possible</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="s-label">Questions fréquentes</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;">Vos questions sur la rémunération dirigeant</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>Faut-il absolument se verser un salaire en SASU ?</h4>
+      <p>Non, ce n'est pas obligatoire. Mais sans salaire, vous n'avez aucune protection sociale (maladie, retraite, chômage). Un salaire minimum est recommandé pour valider des trimestres de retraite et ouvrir des droits.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Les dividendes sont-ils vraiment moins chargés ?</h4>
+      <p>En SASU/SAS, oui — les dividendes sont soumis à la flat tax de 30% (17,2% de prélèvements sociaux + 12,8% d'IR). En SARL, les dividendes dépassant 10% du capital subissent les cotisations TNS, ce qui les rend moins avantageux.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Quelle est la stratégie optimale pour un SASU bisontin ?</h4>
+      <p>En général : se verser un salaire autour du PASS (46 368€ en 2025) pour valider ses droits sociaux, puis distribuer le reste en dividendes. Cette stratégie maximise le net tout en maintenant une protection sociale correcte.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Le PER est-il intéressant pour un dirigeant ?</h4>
+      <p>Absolument. Le PER permet de déduire les versements du revenu imposable. Pour un dirigeant à la TMI 41%, chaque 1 000€ versé génère 410€ d'économie d'impôt — tout en constituant son capital retraite.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Comment optimiser sa rémunération avec un PER ?</h4>
+      <p>La stratégie : verser une partie du bénéfice en salaire, puis alimenter un PER avec une partie de ce salaire. La déduction fiscale réduit votre TMI effective, ce qui peut même modifier le calcul optimal salaire/dividendes.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Un expert peut-il m'aider à Besançon ?</h4>
+      <p>Oui. MonOptimisationPro propose un diagnostic personnalisé pour les dirigeants de la région — intégrant rémunération, PER, prévoyance TNS et assurance vie. Gratuit, sans engagement, en présentiel ou visio.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Optimisez votre rémunération<br><em>avec un expert local.</em></h2>
+  <a href="index.html#diagnostic" class="btn-gold">Diagnostic dirigeant gratuit →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">MonOptimisation<span>Pro</span></div>
+  <p>© 2025 MonOptimisationPro.fr — Tous droits réservés</p>
+  <a href="mentions-legales.html">Mentions légales</a>
+</footer>
+
+<script>
+let currentStructure = 'sarl';
+
+function setStructure(s, el) {
+  currentStructure = s;
+  document.querySelectorAll('.str-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  simulate();
+}
+
+function fmt(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
+function pct(n) { return (n * 100).toFixed(1) + '%'; }
+
+function getParams() {
+  const resultat = +document.getElementById('resultat').value;
+  const tmi = +document.getElementById('tmi').value;
+  const mixPct = +document.getElementById('mix-pct').value / 100;
+  return { resultat, tmi, mixPct, structure: currentStructure };
+}
+
+function calcSalaire(brut, structure) {
+  // Taux charges patronales + salariales simplifiés
+  const tauxCharges = structure === 'sarl' ? 0.45 : 0.82;
+  const net = brut / (1 + tauxCharges);
+  const charges = brut - net;
+  return { brut, net, charges };
+}
+
+function calcDividendes(montant, structure, tmi) {
+  // IS d'abord sur le résultat
+  const is = montant * 0.25; // IS à 25% (taux normal)
+  const apresIS = montant - is;
+  // Flat tax 30% sur dividendes (SASU/SAS) ou cotisations TNS si SARL
+  let cotisDiv = 0, ir = 0, ps = 0;
+  if (structure === 'sarl') {
+    cotisDiv = apresIS * 0.45 * 0.1; // Cotisations sur la part > 10% capital (simplifié)
+    ir = (apresIS - cotisDiv) * tmi * 0.6; // Abattement 40%
+    ps = apresIS * 0.172;
+  } else {
+    ps = apresIS * 0.172;
+    ir = (apresIS * 0.6) * tmi; // Abattement 40% ou flat tax
+    // On prend le plus favorable
+    const flatTax = apresIS * 0.30;
+    const bareme = ps + ir;
+    if (flatTax < bareme) { ir = apresIS * 0.128; ps = apresIS * 0.172; }
+  }
+  const net = apresIS - cotisDiv - ir - ps;
+  return { brut: montant, is, apresIS, cotisDiv, ir, ps, net };
+}
+
+function simulate() {
+  const { resultat, tmi, mixPct, structure } = getParams();
+  document.getElementById('resultat-display').textContent = resultat.toLocaleString('fr-FR') + ' €';
+  document.getElementById('mix-pct-display').textContent = Math.round(mixPct * 100) + '%';
+
+  // Scénario 1 : 100% salaire
+  const s1 = calcSalaire(resultat, structure);
+  const s1IR = s1.net * tmi;
+  const s1Net = s1.net - s1IR;
+
+  // Scénario 2 : 100% dividendes
+  const s2 = calcDividendes(resultat, structure, tmi);
+
+  // Scénario 3 : Mix
+  const brutSal = resultat * mixPct;
+  const brutDiv = resultat * (1 - mixPct);
+  const s3Sal = calcSalaire(brutSal, structure);
+  const s3SalIR = s3Sal.net * tmi;
+  const s3SalNet = s3Sal.net - s3SalIR;
+  const s3Div = calcDividendes(brutDiv, structure, tmi);
+  const s3Net = s3SalNet + s3Div.net;
+
+  const nets = [s1Net, s2.net, s3Net];
+  const maxNet = Math.max(...nets);
+
+  // Affichage scénarios
+  const bestIdx = nets.indexOf(maxNet);
+  const scenarioHTML = [
+    { title: '100% Salaire', net: s1Net, details: [
+      { l: 'Brut versé', v: fmt(resultat), cls: '' },
+      { l: 'Charges sociales', v: '-' + fmt(resultat - s1.net), cls: 'red' },
+      { l: 'Net avant IR', v: fmt(s1.net), cls: '' },
+      { l: 'Impôt sur le revenu', v: '-' + fmt(s1IR), cls: 'red' },
+      { l: 'Net disponible', v: fmt(s1Net), cls: 'gold' },
+    ]},
+    { title: '100% Dividendes', net: s2.net, details: [
+      { l: 'Résultat brut', v: fmt(resultat), cls: '' },
+      { l: 'IS (25%)', v: '-' + fmt(s2.is), cls: 'red' },
+      { l: 'Après IS', v: fmt(s2.apresIS), cls: '' },
+      { l: 'Prélèv. sociaux + IR', v: '-' + fmt(s2.ir + s2.ps + s2.cotisDiv), cls: 'red' },
+      { l: 'Net disponible', v: fmt(s2.net), cls: 'gold' },
+    ]},
+    { title: 'Mix ' + Math.round(mixPct*100) + '/' + Math.round((1-mixPct)*100), net: s3Net, details: [
+      { l: 'Part salaire', v: fmt(brutSal), cls: '' },
+      { l: 'Net salaire', v: fmt(s3SalNet), cls: 'green' },
+      { l: 'Part dividendes', v: fmt(brutDiv), cls: '' },
+      { l: 'Net dividendes', v: fmt(s3Div.net), cls: 'green' },
+      { l: 'Net total', v: fmt(s3Net), cls: 'gold' },
+    ]},
+  ].map((s, i) => `
+    <div class="scenario-card ${i === bestIdx ? 'best' : ''}">
+      <div class="sc-title">${s.title}</div>
+      <div class="sc-net">${fmt(s.net)}</div>
+      <div class="sc-net-label">net disponible / an</div>
+      <div class="sc-breakdown">
+        ${s.details.map(d => `<div class="sc-line"><span class="lbl">${d.l}</span><span class="amt ${d.cls}">${d.v}</span></div>`).join('')}
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('scenarios-grid').innerHTML = scenarioHTML;
+
+  // Graphique
+  const maxBar = maxNet * 1.1;
+  document.getElementById('bar-chart').innerHTML = `
+    <div class="bar-row">
+      <span class="bar-label">100% Salaire</span>
+      <div class="bar-track"><div class="bar-fill salary" style="width:${(s1Net/maxBar*100).toFixed(1)}%"><span class="bar-val">${fmt(s1Net)}</span></div></div>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">100% Dividendes</span>
+      <div class="bar-track"><div class="bar-fill dividends" style="width:${(s2.net/maxBar*100).toFixed(1)}%"><span class="bar-val">${fmt(s2.net)}</span></div></div>
+    </div>
+    <div class="bar-row">
+      <span class="bar-label">Mix ${Math.round(mixPct*100)}/${Math.round((1-mixPct)*100)}</span>
+      <div class="bar-track"><div class="bar-fill mix" style="width:${(s3Net/maxBar*100).toFixed(1)}%"><span class="bar-val">${fmt(s3Net)}</span></div></div>
+    </div>
+  `;
+
+  // Détail onglets
+  const makeTable = (rows) => `
+    <table class="fd-table">
+      <tr><th>Poste</th><th>Montant</th><th>Commentaire</th></tr>
+      ${rows.map(r => `<tr class="${r.total?'total':''}"><td>${r.l}</td><td class="${r.cls||''}">${r.v}</td><td style="font-size:0.8rem;color:var(--muted)">${r.note||''}</td></tr>`).join('')}
+    </table>`;
+
+  document.getElementById('tab-salary').innerHTML = makeTable([
+    { l: 'Résultat brut', v: fmt(resultat), note: 'Avant toute rémunération' },
+    { l: 'Charges sociales', v: '-' + fmt(resultat - s1.net), cls: 'negative', note: structure === 'sarl' ? 'Taux TNS ~45%' : 'Taux assimilé salarié ~82%' },
+    { l: 'Net salarial', v: fmt(s1.net), note: 'Avant impôt sur le revenu' },
+    { l: 'Impôt sur le revenu', v: '-' + fmt(s1IR), cls: 'negative', note: 'TMI ' + (tmi*100) + '%' },
+    { l: 'Net disponible', v: fmt(s1Net), cls: 'positive', total: true, note: 'Ce que vous touchez réellement' },
+  ]);
+
+  document.getElementById('tab-dividends').innerHTML = makeTable([
+    { l: 'Résultat brut', v: fmt(resultat), note: 'Bénéfice de la société' },
+    { l: 'Impôt sur les sociétés', v: '-' + fmt(s2.is), cls: 'negative', note: 'IS à 25%' },
+    { l: 'Résultat après IS', v: fmt(s2.apresIS), note: 'Distribuable en dividendes' },
+    { l: 'Prélèvements sociaux', v: '-' + fmt(s2.ps), cls: 'negative', note: '17,2%' },
+    { l: 'Impôt sur le revenu', v: '-' + fmt(s2.ir), cls: 'negative', note: structure === 'sarl' ? 'Barème avec abattement 40%' : 'Flat tax 12,8%' },
+    { l: 'Net disponible', v: fmt(s2.net), cls: 'positive', total: true, note: 'Ce que vous touchez réellement' },
+  ]);
+
+  document.getElementById('tab-mix').innerHTML = makeTable([
+    { l: 'Part salaire (' + Math.round(mixPct*100) + '%)', v: fmt(brutSal), note: 'Rémunération dirigeant' },
+    { l: 'Charges sociales salaire', v: '-' + fmt(brutSal - s3Sal.net), cls: 'negative', note: '' },
+    { l: 'IR sur salaire', v: '-' + fmt(s3SalIR), cls: 'negative', note: '' },
+    { l: 'Net salaire', v: fmt(s3SalNet), cls: 'positive', note: '' },
+    { l: 'Part dividendes (' + Math.round((1-mixPct)*100) + '%)', v: fmt(brutDiv), note: 'Après IS' },
+    { l: 'IS + taxes dividendes', v: '-' + fmt(brutDiv - s3Div.net), cls: 'negative', note: '' },
+    { l: 'Net dividendes', v: fmt(s3Div.net), cls: 'positive', note: '' },
+    { l: 'Net total disponible', v: fmt(s3Net), cls: 'positive', total: true, note: '✅ Optimal' },
+  ]);
+
+  // Recommandation
+  const gain = maxNet - Math.min(...nets);
+  const bestLabel = ['100% Salaire', '100% Dividendes', 'Mix salaire/dividendes'][bestIdx];
+  const struLabel = { sarl: 'SARL (gérant TNS)', sasu: 'SASU (président)', sas: 'SAS' }[structure];
+
+  let recoText = `Pour un résultat de <strong>${fmt(resultat)}</strong> en <strong>${struLabel}</strong> avec une TMI de <strong>${Math.round(tmi*100)}%</strong>, la stratégie <strong>${bestLabel}</strong> est la plus avantageuse. `;
+
+  if (bestIdx === 2) {
+    recoText += `Elle vous permet de percevoir <strong>${fmt(maxNet)}/an</strong>, soit <strong>${fmt(gain)} de plus</strong> que la stratégie la moins optimale. `;
+  }
+  if (structure === 'sasu' || structure === 'sas') {
+    recoText += `En SASU/SAS, les dividendes ne supportent que la flat tax à 30%, ce qui les rend très attractifs au-delà d'un salaire de base assurant vos droits sociaux. `;
+  }
+  if (structure === 'sarl') {
+    recoText += `En SARL, attention : les dividendes dépassant 10% du capital social subissent les cotisations TNS, ce qui réduit leur avantage par rapport à la SASU. `;
+  }
+  recoText += `<br><br>💡 Pour aller plus loin : combiner cette stratégie avec un <strong>PER</strong> (déduction fiscale immédiate) et une <strong>prévoyance TNS</strong> peut encore optimiser votre situation nette.`;
+
+  document.getElementById('reco-text').innerHTML = recoText;
+}
+
+function switchTab(tab, el) {
+  document.querySelectorAll('.fd-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.fd-content').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
+async function submitLead() {
+  const p = document.getElementById('cap-p').value;
+  const e = document.getElementById('cap-e').value;
+  const t = document.getElementById('cap-t').value;
+  const { resultat, structure } = getParams();
+  if (!p || !e) { alert('Merci de renseigner au moins votre prénom et email.'); return; }
+  await fetch('https://formspree.io/f/mwvrdkzl', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      prenom: p, email: e, telephone: t,
+      source: 'Simulateur Rémunération Dirigeant',
+      structure: structure.toUpperCase(),
+      resultat: resultat + '€',
+      _subject: '🔥 Nouveau lead — Simulateur Dirigeant — MonOptimisationPro'
+    })
+  });
+  alert('✅ Merci ' + p + ' ! Je vous contacte sous 24h pour votre analyse. En cas d\'urgence : 06 85 47 83 67');
+}
+
+// Init
+simulate();
+</script>
+</body>
+</html>

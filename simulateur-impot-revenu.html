@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulateur Impôt sur le Revenu 2025 — Calcul IR Gratuit | MonOptimisationPro</title>
+<meta name="description" content="Calculez votre impôt sur le revenu 2025 gratuitement. Salaire, parts fiscales, enfants, quotient familial — résultat instantané et conseils pour réduire votre IR à Besançon et en Franche-Comté.">
+<meta name="keywords" content="simulateur impôt revenu 2025, calculer impôt sur le revenu, calcul IR gratuit, quotient familial, parts fiscales enfants, réduire impôts Besançon, TMI calcul Franche-Comté">
+<meta name="geo.region" content="FR-BFC">
+<meta name="geo.placename" content="Besançon, Belfort, Vesoul, Franche-Comté">
+<meta name="geo.position" content="47.2378;6.0241">
+<meta name="ICBM" content="47.2378, 6.0241">
+<meta name="language" content="fr-FR">
+<link rel="canonical" href="https://monoptimisationpro.fr/simulateur-impot-revenu.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CL0FRFV41Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CL0FRFV41Y');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#080f1e; --navy-mid:#0e1f38; --navy-light:#162f52;
+    --gold:#c9a84c; --gold-light:#e2c46e; --gold-pale:#f5e6b8;
+    --muted:#7a8fa8; --light:#b8cce0;
+    --green:#4ade80; --red:#f87171;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'DM Sans',sans-serif; background:var(--navy); color:#fff; overflow-x:hidden; }
+
+  /* NAV AVEC DROPDOWN */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:22px 72px; background:rgba(8,15,30,0.96); backdrop-filter:blur(20px); border-bottom:1px solid rgba(201,168,76,0.1); }
+  .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:600; color:#fff; letter-spacing:0.04em; text-decoration:none; }
+  .nav-logo span { color:var(--gold); }
+  .nav-links { display:flex; gap:32px; list-style:none; align-items:center; }
+  .nav-links > li { position:relative; }
+  .nav-links a { color:var(--light); text-decoration:none; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; transition:color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--gold); }
+  .nav-dropdown { position:relative; }
+  .nav-dropdown > a { display:flex; align-items:center; gap:6px; cursor:pointer; }
+  .nav-dropdown > a::after { content:'▾'; font-size:0.7rem; color:var(--gold); }
+  .dropdown-menu { position:absolute; top:calc(100% + 16px); left:0; background:rgba(8,15,30,0.98); border:1px solid rgba(201,168,76,0.15); min-width:260px; display:none; flex-direction:column; z-index:200; backdrop-filter:blur(20px); }
+  .nav-dropdown:hover .dropdown-menu { display:flex; }
+  .dropdown-menu a { color:var(--light); text-decoration:none; padding:14px 20px; font-size:0.82rem; letter-spacing:0.05em; text-transform:uppercase; transition:all 0.2s; display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(201,168,76,0.06); }
+  .dropdown-menu a:last-child { border-bottom:none; }
+  .dropdown-menu a:hover { background:rgba(201,168,76,0.08); color:var(--gold); }
+  .dropdown-menu a .icon { font-size:1rem; }
+  .nav-cta { background:transparent; border:1px solid var(--gold); color:var(--gold); padding:10px 28px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; font-weight:500; transition:all 0.3s; }
+  .nav-cta:hover { background:var(--gold); color:var(--navy); }
+
+  /* HERO */
+  .page-hero { padding:140px 72px 80px; background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-bottom:1px solid rgba(201,168,76,0.1); }
+  .s-label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:20px; display:flex; align-items:center; gap:14px; }
+  .s-label::before { content:''; width:28px; height:1px; background:var(--gold); }
+  .page-hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,4.5vw,4rem); font-weight:700; line-height:1.1; max-width:780px; margin-bottom:20px; }
+  .page-hero p { font-size:1rem; color:var(--light); line-height:1.8; max-width:620px; font-weight:300; }
+
+  /* SIMULATEUR */
+  .sim-section { padding:60px 72px; background:var(--navy); }
+  .sim-wrap { display:grid; grid-template-columns:400px 1fr; gap:40px; align-items:start; }
+
+  /* INPUTS */
+  .inputs-panel { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.15); padding:40px; position:sticky; top:90px; }
+  .inputs-panel h3 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--gold); margin-bottom:32px; }
+  .input-group { margin-bottom:24px; }
+  .input-group label { display:block; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px; }
+  .val-display { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--gold); margin-bottom:10px; }
+  input[type=range] { width:100%; -webkit-appearance:none; height:2px; background:rgba(201,168,76,0.15); outline:none; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:var(--gold); cursor:pointer; }
+  .select-field { width:100%; background:var(--navy); border:1px solid rgba(201,168,76,0.2); color:#fff; padding:12px 16px; font-family:'DM Sans',sans-serif; font-size:0.95rem; outline:none; }
+  .toggle-btns { display:flex; gap:8px; }
+  .toggle-btn { flex:1; background:var(--navy); border:1px solid rgba(201,168,76,0.2); color:var(--muted); padding:10px; font-size:0.82rem; font-weight:600; cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; text-align:center; }
+  .toggle-btn.active { background:rgba(201,168,76,0.15); border-color:var(--gold); color:var(--gold); }
+  .enfants-btns { display:flex; gap:6px; flex-wrap:wrap; }
+  .enfant-btn { width:44px; height:44px; background:var(--navy); border:1px solid rgba(201,168,76,0.2); color:var(--muted); font-size:0.9rem; font-weight:700; cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; display:flex; align-items:center; justify-content:center; }
+  .enfant-btn.active { background:rgba(201,168,76,0.15); border-color:var(--gold); color:var(--gold); }
+  .divider { height:1px; background:rgba(201,168,76,0.08); margin:20px 0; }
+
+  /* RÉSULTATS */
+  .results-panel { display:flex; flex-direction:column; gap:24px; }
+
+  /* CARTE PRINCIPALE */
+  .main-result { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.15); padding:40px; }
+  .result-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:32px; flex-wrap:wrap; gap:20px; }
+  .result-big { }
+  .result-big .label { font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+  .result-big .amount { font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:700; color:var(--gold); line-height:1; }
+  .result-big .sublabel { font-size:0.82rem; color:var(--muted); margin-top:6px; }
+  .result-tmi { text-align:right; }
+  .result-tmi .label { font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+  .result-tmi .tmi-badge { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:700; color:var(--white,#fff); }
+  .result-tmi .tmi-label { font-size:0.82rem; color:var(--muted); margin-top:6px; }
+
+  /* BARRES DE TRANCHES */
+  .tranches-title { font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:16px; }
+  .tranche-bar { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+  .tranche-label { font-size:0.78rem; color:var(--muted); width:120px; flex-shrink:0; }
+  .tranche-track { flex:1; background:rgba(255,255,255,0.05); height:28px; border-radius:2px; overflow:hidden; position:relative; }
+  .tranche-fill { height:100%; border-radius:2px; transition:width 0.5s ease; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; }
+  .tranche-fill .tv { font-size:0.75rem; font-weight:700; color:#fff; white-space:nowrap; }
+  .t0 { background:rgba(201,168,76,0.15); }
+  .t11 { background:linear-gradient(90deg,#60a5fa88,#60a5fa); }
+  .t30 { background:linear-gradient(90deg,#f59e0b88,#f59e0b); }
+  .t41 { background:linear-gradient(90deg,#f8713188,#f87131); }
+  .t45 { background:linear-gradient(90deg,#f8717188,#f87171); }
+
+  /* SYNTHÈSE */
+  .synthese-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px; background:rgba(201,168,76,0.06); margin-top:28px; }
+  .synth-item { background:var(--navy); padding:20px 24px; text-align:center; }
+  .synth-item .sv { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:700; color:var(--gold); }
+  .synth-item .sl { font-size:0.75rem; color:var(--muted); margin-top:6px; line-height:1.4; }
+
+  /* PER OPTIMIZER */
+  .per-optimizer { background:rgba(201,168,76,0.06); border:1px solid rgba(201,168,76,0.15); padding:32px; }
+  .per-opt-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--gold); margin-bottom:8px; }
+  .per-opt-sub { font-size:0.88rem; color:var(--muted); margin-bottom:20px; line-height:1.6; }
+  .per-opt-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px; }
+  .per-opt-item { background:var(--navy-mid); padding:16px 20px; }
+  .per-opt-item .pv { font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--green); }
+  .per-opt-item .pl { font-size:0.75rem; color:var(--muted); margin-top:4px; }
+  .per-slider-wrap { margin-bottom:16px; }
+  .per-slider-wrap label { font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); font-weight:600; display:block; margin-bottom:8px; }
+  .per-slider-val { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold); margin-bottom:8px; }
+
+  /* CAPTURE */
+  .capture-box { background:var(--navy-light); border:1px solid rgba(201,168,76,0.15); padding:32px; }
+  .capture-box h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; margin-bottom:8px; }
+  .capture-box p { font-size:0.88rem; color:var(--muted); line-height:1.6; margin-bottom:20px; }
+  .capture-fields { display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:12px; }
+  .capture-fields input { background:var(--navy-mid); border:1px solid rgba(201,168,76,0.2); color:#fff; padding:14px 18px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; transition:border-color 0.2s; }
+  .capture-fields input:focus { border-color:var(--gold); }
+  .capture-fields input::placeholder { color:var(--muted); }
+
+  .btn-gold { background:var(--gold); color:var(--navy); padding:14px 28px; border:none; cursor:pointer; font-weight:600; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; font-family:'DM Sans',sans-serif; white-space:nowrap; transition:all 0.2s; text-decoration:none; display:inline-block; }
+  .btn-gold:hover { background:var(--gold-light); }
+
+  /* INFO TRANCHES */
+  .tranches-section { padding:80px 72px; background:var(--navy-mid); }
+  .tranches-table { width:100%; border-collapse:collapse; margin-top:40px; }
+  .tranches-table th { background:var(--navy-light); padding:14px 20px; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); text-align:left; }
+  .tranches-table td { padding:14px 20px; font-size:0.9rem; color:var(--light); border-bottom:1px solid rgba(201,168,76,0.06); }
+  .tranches-table tr:hover td { background:rgba(201,168,76,0.03); }
+  .tranches-table .tmi-cell { font-weight:700; }
+  .tmi-0 { color:var(--muted); }
+  .tmi-11 { color:#60a5fa; }
+  .tmi-30 { color:#f59e0b; }
+  .tmi-41 { color:#f87131; }
+  .tmi-45 { color:var(--red); }
+
+  /* CTA */
+  .cta-band { background:var(--navy-light); border-top:1px solid rgba(201,168,76,0.12); padding:80px 72px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
+  .cta-band h2 { font-family:'Cormorant Garamond',serif; font-size:2.4rem; max-width:560px; line-height:1.2; }
+  .cta-band h2 em { font-style:italic; color:var(--gold); }
+
+  footer { background:var(--navy); border-top:1px solid rgba(201,168,76,0.08); padding:32px 72px; display:flex; justify-content:space-between; align-items:center; }
+  .footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:#fff; }
+  .footer-logo span { color:var(--gold); }
+  footer p { font-size:0.78rem; color:var(--muted); }
+  footer a { color:var(--muted); text-decoration:none; font-size:0.78rem; }
+
+  @media(max-width:1100px) { .sim-wrap { grid-template-columns:1fr; } .inputs-panel { position:static; } .synthese-grid { grid-template-columns:1fr 1fr; } .per-opt-grid { grid-template-columns:1fr; } .capture-fields { grid-template-columns:1fr; } }
+  @media(max-width:960px) { nav { padding:16px 24px; } .nav-links { display:none; } .page-hero,.sim-section,.tranches-section,.cta-band { padding-left:24px; padding-right:24px; } .result-header { flex-direction:column; } .cta-band { flex-direction:column; text-align:center; } footer { flex-direction:column; gap:12px; text-align:center; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">MonOptimisation<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="per-retraite.html">PER & Retraite</a></li>
+    <li><a href="assurance-vie.html">Assurance Vie</a></li>
+    <li><a href="prevoyance.html">Prévoyance</a></li>
+    <li><a href="dependance.html">Dépendance</a></li>
+    <li class="nav-dropdown">
+      <a href="#" class="active">Simulateurs</a>
+      <div class="dropdown-menu">
+        <a href="simulateur-impot-revenu.html"><span class="icon">🧮</span>Impôt sur le Revenu</a>
+        <a href="simulateur-remuneration-dirigeant.html"><span class="icon">🏢</span>Rémunération Dirigeant</a>
+        <a href="per-retraite.html#simulateurs"><span class="icon">📊</span>Simulateur PER</a>
+        <a href="assurance-vie.html#simulateurs"><span class="icon">📈</span>Simulateur Assurance Vie</a>
+        <a href="dependance.html#simulateurs"><span class="icon">🏥</span>Simulateur Dépendance</a>
+      </div>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tel:0685478367" style="color:var(--gold)">📞 06 85 47 83 67</a></li>
+  </ul>
+  <a href="index.html#diagnostic" class="nav-cta">Diagnostic gratuit</a>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="s-label">Simulateur Fiscal 2025</div>
+  <h1>Calculez votre impôt<br>sur le revenu <em style="font-style:italic;color:var(--gold)">en 30 secondes.</em></h1>
+  <p>Salaire, situation familiale, enfants, parts fiscales — obtenez une estimation précise de votre IR 2025 et découvrez combien vous pourriez économiser.</p>
+</section>
+
+<!-- SIMULATEUR -->
+<section class="sim-section">
+  <div class="sim-wrap">
+
+    <!-- INPUTS -->
+    <div class="inputs-panel">
+      <h3>Votre situation</h3>
+
+      <div class="input-group">
+        <label>Revenu annuel brut</label>
+        <div class="val-display" id="rev-display">45 000 €</div>
+        <input type="range" min="10000" max="200000" step="1000" value="45000" oninput="calcIR()" id="revenu">
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="input-group">
+        <label>Situation familiale</label>
+        <div class="toggle-btns">
+          <div class="toggle-btn active" onclick="setSituation('celibataire', this)">Célibataire</div>
+          <div class="toggle-btn" onclick="setSituation('marie', this)">Marié/Pacsé</div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Nombre d'enfants à charge</label>
+        <div class="enfants-btns" id="enfants-btns">
+          <div class="enfant-btn active" onclick="setEnfants(0, this)">0</div>
+          <div class="enfant-btn" onclick="setEnfants(1, this)">1</div>
+          <div class="enfant-btn" onclick="setEnfants(2, this)">2</div>
+          <div class="enfant-btn" onclick="setEnfants(3, this)">3</div>
+          <div class="enfant-btn" onclick="setEnfants(4, this)">4</div>
+          <div class="enfant-btn" onclick="setEnfants(5, this)">5+</div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Parts fiscales calculées</label>
+        <div class="val-display" id="parts-display" style="font-size:1.4rem;">1,0 part</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="input-group">
+        <label>Autres revenus (fonciers, dividendes...)</label>
+        <div class="val-display" id="autres-display">0 €</div>
+        <input type="range" min="0" max="50000" step="500" value="0" oninput="calcIR()" id="autres">
+      </div>
+
+      <div class="input-group">
+        <label>Déductions (pension alimentaire, frais réels...)</label>
+        <div class="val-display" id="deduc-display">0 €</div>
+        <input type="range" min="0" max="20000" step="500" value="0" oninput="calcIR()" id="deductions">
+      </div>
+
+      <div style="padding:14px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.1);margin-top:8px;">
+        <p style="font-size:0.75rem;color:var(--muted);line-height:1.6;">⚠️ Simulation indicative basée sur le barème 2025. Ne tient pas compte de toutes les situations particulières.</p>
+      </div>
+    </div>
+
+    <!-- RÉSULTATS -->
+    <div class="results-panel">
+
+      <!-- RÉSULTAT PRINCIPAL -->
+      <div class="main-result">
+        <div class="result-header">
+          <div class="result-big">
+            <div class="label">Impôt estimé 2025</div>
+            <div class="amount" id="ir-amount">3 842 €</div>
+            <div class="sublabel" id="ir-mensuel">soit 320 €/mois</div>
+          </div>
+          <div class="result-tmi">
+            <div class="label">Tranche marginale</div>
+            <div class="tmi-badge" id="tmi-badge">30%</div>
+            <div class="tmi-label">d'imposition (TMI)</div>
+          </div>
+        </div>
+
+        <div class="tranches-title">Répartition par tranche d'imposition</div>
+        <div id="tranches-bars"><!-- JS --></div>
+
+        <div class="synthese-grid">
+          <div class="synth-item">
+            <div class="sv" id="synth-net">38 250 €</div>
+            <div class="sl">Revenu net imposable<br>(après abattement 10%)</div>
+          </div>
+          <div class="synth-item">
+            <div class="sv" id="synth-taux">8,5%</div>
+            <div class="sl">Taux moyen<br>d'imposition</div>
+          </div>
+          <div class="synth-item">
+            <div class="sv" id="synth-reste">41 158 €</div>
+            <div class="sl">Revenu disponible<br>après impôt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPTIMISEUR PER -->
+      <div class="per-optimizer">
+        <div class="per-opt-title">💡 Et si vous ouvriez un PER ?</div>
+        <div class="per-opt-sub">Simulez l'impact d'un versement PER sur votre impôt. Chaque euro versé réduit directement votre revenu imposable.</div>
+
+        <div class="per-slider-wrap">
+          <label>Versement PER mensuel</label>
+          <div class="per-slider-val" id="per-val">200 €/mois</div>
+          <input type="range" min="0" max="1500" step="50" value="200" oninput="calcIR()" id="per-versement">
+        </div>
+
+        <div class="per-opt-grid">
+          <div class="per-opt-item">
+            <div class="pv" id="eco-ir">720 €</div>
+            <div class="pl">Économie d'impôt<br>par an</div>
+          </div>
+          <div class="per-opt-item">
+            <div class="pv" id="ir-apres-per">3 122 €</div>
+            <div class="pl">Impôt après PER<br>(au lieu de <span id="ir-avant-per">3 842 €</span>)</div>
+          </div>
+        </div>
+
+        <a href="per-retraite.html" class="btn-gold" style="display:inline-block;margin-top:8px;">En savoir plus sur le PER →</a>
+      </div>
+
+      <!-- CAPTURE -->
+      <div class="capture-box">
+        <h3>Obtenez votre analyse personnalisée</h3>
+        <p>Ces chiffres sont des estimations. Pour une analyse précise de votre situation et les meilleures stratégies pour réduire votre IR :</p>
+        <div class="capture-fields">
+          <input type="text" placeholder="Prénom" id="cap-p">
+          <input type="email" placeholder="Email" id="cap-e">
+          <input type="tel" placeholder="Téléphone" id="cap-t">
+          <button class="btn-gold" onclick="submitLead()">Analyse gratuite →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TABLEAU TRANCHES -->
+<section class="tranches-section">
+  <div class="s-label">Barème officiel</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;">Barème de l'impôt sur le revenu 2025</h2>
+  <p style="color:var(--muted);margin-top:16px;font-size:0.95rem;max-width:600px;line-height:1.7;">Le calcul de l'IR est progressif : chaque tranche s'applique uniquement à la part du revenu qui la dépasse. Votre TMI n'est pas le taux appliqué à tout votre revenu.</p>
+  <table class="tranches-table">
+    <tr>
+      <th>Tranche de revenu (par part)</th>
+      <th>Taux d'imposition</th>
+      <th>Impact pour vous</th>
+    </tr>
+    <tr>
+      <td>Jusqu'à 11 294 €</td>
+      <td class="tmi-cell tmi-0">0%</td>
+      <td style="color:var(--muted);">Non imposé</td>
+    </tr>
+    <tr>
+      <td>De 11 294 € à 28 797 €</td>
+      <td class="tmi-cell tmi-11">11%</td>
+      <td style="color:var(--muted);">Max 1 925 € d'impôt</td>
+    </tr>
+    <tr>
+      <td>De 28 797 € à 82 341 €</td>
+      <td class="tmi-cell tmi-30">30%</td>
+      <td style="color:var(--muted);">La tranche la plus courante</td>
+    </tr>
+    <tr>
+      <td>De 82 341 € à 177 106 €</td>
+      <td class="tmi-cell tmi-41">41%</td>
+      <td style="color:var(--muted);">Hauts revenus</td>
+    </tr>
+    <tr>
+      <td>Au-delà de 177 106 €</td>
+      <td class="tmi-cell tmi-45">45%</td>
+      <td style="color:var(--muted);">Très hauts revenus</td>
+    </tr>
+  </table>
+</section>
+
+<div class="cta-band">
+  <h2>Réduisez votre impôt<br><em>dès cette année.</em></h2>
+  <a href="index.html#diagnostic" class="btn-gold">Diagnostic fiscal gratuit →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">MonOptimisation<span>Pro</span></div>
+  <p>© 2025 MonOptimisationPro.fr — Tous droits réservés</p>
+  <a href="mentions-legales.html">Mentions légales</a>
+</footer>
+
+<script>
+let situation = 'celibataire';
+let nbEnfants = 0;
+
+function setSituation(s, el) {
+  situation = s;
+  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  calcIR();
+}
+
+function setEnfants(n, el) {
+  nbEnfants = n;
+  document.querySelectorAll('.enfant-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  calcIR();
+}
+
+function getParts() {
+  let parts = situation === 'marie' ? 2 : 1;
+  if (nbEnfants >= 1) parts += 0.5;
+  if (nbEnfants >= 2) parts += 0.5;
+  if (nbEnfants >= 3) parts += 1;
+  if (nbEnfants >= 4) parts += 1;
+  if (nbEnfants >= 5) parts += 1;
+  return parts;
+}
+
+function calcIRBrut(revenuParPart) {
+  const tranches = [
+    { min: 0, max: 11294, taux: 0 },
+    { min: 11294, max: 28797, taux: 0.11 },
+    { min: 28797, max: 82341, taux: 0.30 },
+    { min: 82341, max: 177106, taux: 0.41 },
+    { min: 177106, max: Infinity, taux: 0.45 },
+  ];
+  let impot = 0;
+  let details = [];
+  for (const t of tranches) {
+    if (revenuParPart <= t.min) break;
+    const base = Math.min(revenuParPart, t.max) - t.min;
+    const montant = base * t.taux;
+    impot += montant;
+    details.push({ taux: t.taux, base, montant });
+  }
+  return { impot, details };
+}
+
+function calcIR() {
+  const revBrut = +document.getElementById('revenu').value;
+  const autres = +document.getElementById('autres').value;
+  const deductions = +document.getElementById('deductions').value;
+  const perVers = +document.getElementById('per-versement').value;
+
+  document.getElementById('rev-display').textContent = revBrut.toLocaleString('fr-FR') + ' €';
+  document.getElementById('autres-display').textContent = autres.toLocaleString('fr-FR') + ' €';
+  document.getElementById('deduc-display').textContent = deductions.toLocaleString('fr-FR') + ' €';
+  document.getElementById('per-val').textContent = perVers + ' €/mois';
+
+  const parts = getParts();
+  document.getElementById('parts-display').textContent = parts.toFixed(1).replace('.', ',') + ' part' + (parts > 1 ? 's' : '');
+
+  // Abattement forfaitaire 10% (min 495, max 14171)
+  const abattement = Math.min(Math.max(revBrut * 0.10, 495), 14171);
+  const revNetImposable = Math.max(0, revBrut - abattement + autres - deductions);
+  const revParPart = revNetImposable / parts;
+
+  // IR sans PER
+  const { impot: irBrut, details } = calcIRBrut(revParPart);
+  const irTotal = irBrut * parts;
+
+  // IR avec PER
+  const perAnnuel = perVers * 12;
+  const revAvecPER = Math.max(0, revNetImposable - perAnnuel);
+  const revParPartPER = revAvecPER / parts;
+  const { impot: irBrutPER } = calcIRBrut(revParPartPER);
+  const irTotalPER = irBrutPER * parts;
+  const ecoIR = irTotal - irTotalPER;
+
+  // TMI
+  let tmi = 0;
+  if (revParPart > 177106) tmi = 45;
+  else if (revParPart > 82341) tmi = 41;
+  else if (revParPart > 28797) tmi = 30;
+  else if (revParPart > 11294) tmi = 11;
+
+  // Affichage
+  const fmt = n => Math.round(n).toLocaleString('fr-FR') + ' €';
+
+  document.getElementById('ir-amount').textContent = fmt(irTotal);
+  document.getElementById('ir-mensuel').textContent = 'soit ' + fmt(irTotal / 12).replace(' €', '') + ' €/mois';
+  document.getElementById('tmi-badge').textContent = tmi + '%';
+  document.getElementById('synth-net').textContent = fmt(revNetImposable);
+  document.getElementById('synth-taux').textContent = revBrut > 0 ? ((irTotal / revBrut) * 100).toFixed(1) + '%' : '0%';
+  document.getElementById('synth-reste').textContent = fmt(revBrut - irTotal);
+  document.getElementById('eco-ir').textContent = fmt(ecoIR);
+  document.getElementById('ir-apres-per').textContent = fmt(irTotalPER);
+  document.getElementById('ir-avant-per').textContent = fmt(irTotal);
+
+  // Barres tranches
+  const maxBase = revNetImposable / parts;
+  const tranchesData = [
+    { label: '0% (0 → 11 294€)', cls: 't0', base: Math.min(maxBase, 11294), taux: 0 },
+    { label: '11% (11 294 → 28 797€)', cls: 't11', base: Math.max(0, Math.min(maxBase, 28797) - 11294), taux: 0.11 },
+    { label: '30% (28 797 → 82 341€)', cls: 't30', base: Math.max(0, Math.min(maxBase, 82341) - 28797), taux: 0.30 },
+    { label: '41% (82 341 → 177 106€)', cls: 't41', base: Math.max(0, Math.min(maxBase, 177106) - 82341), taux: 0.41 },
+    { label: '45% (> 177 106€)', cls: 't45', base: Math.max(0, maxBase - 177106), taux: 0.45 },
+  ];
+  const maxImpotTranche = Math.max(...tranchesData.map(t => t.base * t.taux), 1);
+
+  document.getElementById('tranches-bars').innerHTML = tranchesData
+    .filter(t => t.base > 0)
+    .map(t => {
+      const impotTranche = t.base * t.taux * parts;
+      const pct = Math.max(4, (impotTranche / (irTotal || 1)) * 100);
+      return `<div class="tranche-bar">
+        <span class="tranche-label">${t.label}</span>
+        <div class="tranche-track">
+          <div class="tranche-fill ${t.cls}" style="width:${Math.min(pct, 100)}%">
+            <span class="tv">${impotTranche > 100 ? fmt(impotTranche) : ''}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+}
+
+async function submitLead() {
+  const p = document.getElementById('cap-p').value;
+  const e = document.getElementById('cap-e').value;
+  const t = document.getElementById('cap-t').value;
+  const ir = document.getElementById('ir-amount').textContent;
+  const tmi = document.getElementById('tmi-badge').textContent;
+  if (!p || !e) { alert('Merci de renseigner au moins votre prénom et email.'); return; }
+  await fetch('https://formspree.io/f/mwvrdkzl', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      prenom: p, email: e, telephone: t,
+      source: 'Simulateur Impôt sur le Revenu',
+      ir_estime: ir, tmi: tmi,
+      _subject: '🔥 Nouveau lead — Simulateur IR — MonOptimisationPro'
+    })
+  });
+  alert('✅ Merci ' + p + ' ! Je vous contacte sous 24h. En cas d\'urgence : 06 85 47 83 67');
+}
+
+calcIR();
+</script>
+</body>
+</html>

@@ -120,6 +120,14 @@
     .nav-cta { display:none; }
     .hamburger { display:flex; }
   }
+
+  .mobile-menu { display:none; position:fixed; top:62px; left:0; right:0; bottom:0; background:#080f1e; z-index:99; overflow-y:auto; flex-direction:column; border-top:1px solid rgba(201,168,76,0.15); }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a { color:#b8cce0; text-decoration:none; padding:18px 28px; font-size:0.9rem; text-transform:uppercase; border-bottom:1px solid rgba(201,168,76,0.06); transition:all 0.2s; display:flex; align-items:center; gap:12px; }
+  .mobile-menu a:hover { background:rgba(201,168,76,0.06); color:var(--gold); }
+  .mob-section-title { padding:16px 28px 8px; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); font-weight:700; background:rgba(201,168,76,0.04); border-bottom:1px solid rgba(201,168,76,0.06); }
+  .mob-cta { background:var(--gold) !important; color:#080f1e !important; text-align:center; margin:20px 28px; padding:16px 24px !important; font-weight:700 !important; justify-content:center !important; border:none !important; }
+  @media(max-width:900px) { nav { padding:16px 24px !important; } .nav-links { display:none !important; } .nav-cta { display:none !important; } .hamburger { display:flex !important; } }
 </style>
 </head>
 <body>
